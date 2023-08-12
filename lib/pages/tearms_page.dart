@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:medix/pages/login_page.dart';
+import 'package:medix/pages/start_page.dart';
 
 class TearmsPage extends StatefulWidget {
   const TearmsPage({super.key});
@@ -187,7 +189,10 @@ class _TearmsPageState extends State<TearmsPage> {
                       borderRadius: BorderRadius.circular(15.0),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => const start()));
+                  },
                   child: const Text(
                     "Decline",
                     style: TextStyle(
@@ -209,7 +214,12 @@ class _TearmsPageState extends State<TearmsPage> {
                       borderRadius: BorderRadius.circular(15.0),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginPage()));
+                  },
                   child: const Text(
                     "Accept",
                     style: TextStyle(
