@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medix/pages/tearms_page.dart';
 
 class start extends StatelessWidget {
   const start({super.key});
@@ -71,8 +72,11 @@ class start extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    // Add your button click logic here
-                    print('Button clicked!');
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const TearmsPage())); //navigation from the next page                    print('Button clicked!');
                   },
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
