@@ -27,7 +27,6 @@ class _DashboardState extends State<Dashboard> {
                     Color.fromARGB(225, 116, 43, 186),
                     Color.fromARGB(200, 185, 108, 255)
                   ]),
-              //color: Color(0xFFB96CFF),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(35),
@@ -149,11 +148,7 @@ class _DashboardState extends State<Dashboard> {
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage('assets/feedback.png'))),
-                  // child: Card(
-                  //   elevation: 6,
-                  //   shape: RoundedRectangleBorder(
-                  //     borderRadius: BorderRadius.circular(15.0),
-                  //   ),
+
                   child: Stack(
                     children: [
                       Positioned(
