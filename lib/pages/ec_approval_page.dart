@@ -8,6 +8,10 @@ class EcApproval extends StatefulWidget {
 }
 
 class _EcApprovalState extends State<EcApproval> {
+  TextEditingController ECNameController = TextEditingController();
+  TextEditingController ECBatchController = TextEditingController();
+  TextEditingController ECIdController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold();
