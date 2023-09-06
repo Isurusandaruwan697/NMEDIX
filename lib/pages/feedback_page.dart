@@ -100,6 +100,9 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                 ),
                 child: Stack(
                   children: [
+                  
+                  
+                    // name textfield
                     Positioned(
                       left: 20,
                       top: 30,
@@ -159,6 +162,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                         ),
                       ),
                     ),
+                    // batch textfield
                     Positioned(
                       left: 20,
                       top: 122,
@@ -218,6 +222,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                         ),
                       ),
                     ),
+                    // index number textfield
                     Positioned(
                       left: 20,
                       top: 215,
@@ -277,6 +282,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                         ),
                       ),
                     ),
+                    // feedback textfield
                     Positioned(
                       left: 20,
                       top: 309,
