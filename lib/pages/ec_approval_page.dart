@@ -11,6 +11,8 @@ class _EcApprovalState extends State<EcApproval> {
   TextEditingController ECNameController = TextEditingController();
   TextEditingController ECBatchController = TextEditingController();
   TextEditingController ECIdController = TextEditingController();
+  TextEditingController ECSubjectController = TextEditingController();
+  TextEditingController ECFacultyController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
