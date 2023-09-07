@@ -8,6 +8,10 @@ class userprofile extends StatefulWidget {
 }
 
 class _userprofileState extends State<userprofile> {
+  String name = '50';
+  int index = 10;
+  int birthyear = 08;
+
   @override
   Widget build(BuildContext context) {
     final devHeight = MediaQuery.of(context).size.height;
@@ -111,6 +115,16 @@ class _userprofileState extends State<userprofile> {
             ),
           ),
 
+          Text(
+            name,
+            style: const TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Montserrat',
+              fontSize: 20,
+            ),
+          ),
+
           const Positioned(
             left: 25,
             top: 405,
@@ -125,6 +139,16 @@ class _userprofileState extends State<userprofile> {
             ),
           ),
 
+          Text(
+            index.toStringAsFixed(0),
+            style: const TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Montserrat',
+              fontSize: 20,
+            ),
+          ),
+
           const Positioned(
             left: 25,
             top: 470,
@@ -136,6 +160,16 @@ class _userprofileState extends State<userprofile> {
                 fontFamily: 'Montserrat',
                 fontWeight: FontWeight.w500,
               ),
+            ),
+          ),
+
+          Text(
+            birthyear.toStringAsFixed(0),
+            style: const TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Montserrat',
+              fontSize: 20,
             ),
           ),
 
