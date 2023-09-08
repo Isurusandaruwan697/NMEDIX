@@ -10,6 +10,6 @@ class MedicalApproval extends StatefulWidget {
 class _MedicalApprovalState extends State<MedicalApproval> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold();
   }
 }
