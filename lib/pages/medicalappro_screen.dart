@@ -73,6 +73,272 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                 ),
               ),
             ),
+              //white big container
+            Positioned(
+              left: devWidth / 12 * 1,
+              top: 170,
+              child: Container(
+                width: devWidth / 12 * 10,
+                height: devHeight / 7 * 4.6,
+                decoration: ShapeDecoration(
+                  color: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(27),
+                  ),
+                  shadows: [
+                    BoxShadow(
+                      color: Color(0x3F000000),
+                      blurRadius: 4,
+                      offset: Offset(0, 2),
+                      spreadRadius: 0,
+                    )
+                  ],
+                ),
+                child: Stack(
+                  children: [
+                    Positioned(
+                      left: 20,
+                      top: 18,
+                      child: Text(
+                        'Name',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 20,
+                      top: 40,
+                      child: Container(
+                        width: 306,
+                        height: 44,
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              left: 0,
+                              top: 0,
+                              child: Container(
+                                width: devWidth / 12 * 8.8,
+                                height: 44,
+                                decoration: ShapeDecoration(
+                                  color: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                  shadows: [
+                                    BoxShadow(
+                                      color: Color(0x3F000000),
+                                      blurRadius: 9,
+                                      offset: Offset(1, 4),
+                                      spreadRadius: 0,
+                                    ),
+                                  ],
+                                ),
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                    hintText: '     Enter Your Name',
+                                    hintStyle: TextStyle(
+                                      color: Color(0xFFC4C4C4),
+                                      fontSize: 13,
+                                      fontFamily: 'Montserrat',
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                    border: InputBorder.none,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 20,
+                      top: 95,
+                      child: Text(
+                        'Index Number',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 20,
+                      top: 117,
+                      child: Container(
+                        width: 306,
+                        height: 44,
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              left: 0,
+                              top: 0,
+                              child: Container(
+                                width: devWidth / 12 * 8.8,
+                                height: 44,
+                                decoration: ShapeDecoration(
+                                  color: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                  shadows: [
+                                    BoxShadow(
+                                      color: Color(0x3F000000),
+                                      blurRadius: 9,
+                                      offset: Offset(1, 4),
+                                      spreadRadius: 0,
+                                    ),
+                                  ],
+                                ),
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                    hintText: '     Enter Your Index',
+                                    hintStyle: TextStyle(
+                                      color: Color(0xFFC4C4C4),
+                                      fontSize: 13,
+                                      fontFamily: 'Montserrat',
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                    border: InputBorder.none,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 20,
+                      top: 177,
+                      child: Text(
+                        'Perception Number',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 20,
+                      top: 201,
+                      child: Container(
+                        width: 306,
+                        height: 44,
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              left: 0,
+                              top: 0,
+                              child: Container(
+                                width: devWidth / 12 * 8.8,
+                                height: 44,
+                                decoration: ShapeDecoration(
+                                  color: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                  shadows: [
+                                    BoxShadow(
+                                      color: Color(0x3F000000),
+                                      blurRadius: 9,
+                                      offset: Offset(1, 4),
+                                      spreadRadius: 0,
+                                    ),
+                                  ],
+                                ),
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                    hintText:
+                                        '     Enter Your Perception Number',
+                                    hintStyle: TextStyle(
+                                      color: Color(0xFFC4C4C4),
+                                      fontSize: 13,
+                                      fontFamily: 'Montserrat',
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                    border: InputBorder.none,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 20,
+                      top: 260,
+                      child: Text(
+                        'Date',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 45,
+                      top: 280,
+                      child: Text(
+                        'September 2023',
+                        style: TextStyle(
+                          color: Colors.purple,
+                          fontSize: 10,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 10,
+                      top: 285,
+                      child: SizedBox(
+                        height: 70,
+                        width: devWidth / 12 * 9.5,
+                        child: ListView(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 7, vertical: 10),
+                          children: [
+                            DatePickerCard(datetext: '01\nsep'),
+                            DatePickerCard(datetext: '02\nsep'),
+                            DatePickerCard(datetext: '03\nsep'),
+                            // Padding(
+                            //   padding:
+                            //       const EdgeInsets.symmetric(horizontal: 4.0),
+                            //   child: ElevatedButton(
+                            //     style: ElevatedButton.styleFrom(
+                            //       backgroundColor:
+                            //           Theme.of(context).highlightColor,
+                            //       shape: RoundedRectangleBorder(
+                            //         borderRadius: BorderRadius.circular(12.0),
+                            //       ),
+                            //     ),
+                            //     onPressed: () {},
+                            //     child: const Text(
+                            //       '32\nsep',
+                            //       textAlign: TextAlign.center,
+                            //       style: TextStyle(color: Colors.white),
+                            //     ),
+                            //   ),
+                            // ),
+                          ],
+                        ),
+                      ),
+                    ),
+
     ),
     ) ;
   }
