@@ -338,6 +338,87 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                         ),
                       ),
                     ),
+ //time picker
+                    Positioned(
+                      left: 10,
+                      top: 350,
+                      child: SizedBox(
+                        height: 40,
+                        width: devWidth / 12 * 9.5,
+                        child: ListView(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 7, vertical: 10),
+                          children: [
+                            TimePickerCard(),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 20,
+                      top: 405,
+                      child: Text(
+                        'Faculty',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 20,
+                      top: 430,
+                      child: Container(
+                        width: 306,
+                        height: 44,
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              left: 0,
+                              top: 0,
+                              child: Container(
+                                width: devWidth / 12 * 8.8,
+                                height: 44,
+                                decoration: ShapeDecoration(
+                                  color: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                  shadows: [
+                                    BoxShadow(
+                                      color: Color(0x3F000000),
+                                      blurRadius: 9,
+                                      offset: Offset(1, 4),
+                                      spreadRadius: 0,
+                                    ),
+                                  ],
+                                ),
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                    hintText: '     Enter Your Faculty',
+                                    hintStyle: TextStyle(
+                                      color: Color(0xFFC4C4C4),
+                                      fontSize: 13,
+                                      fontFamily: 'Montserrat',
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                    border: InputBorder.none,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
 
     ),
     ) ;
