@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medix/pages/login_page.dart';
 
 class WelcPage extends StatefulWidget {
   const WelcPage({super.key});
@@ -77,6 +78,9 @@ class _WelcPageState extends State<WelcPage> {
                           ),
                         ),
                       ),
+
+               
+                    
           
               Positioned(
                   left: 15,
@@ -168,6 +172,81 @@ class _WelcPageState extends State<WelcPage> {
                             ),
                     ),
         ),
+
+
+        // Positioned(
+        //         right: 42,
+        //         bottom: 28,
+        //         child: Container(
+        //           width: 160,
+        //           height: 48,
+        //           decoration: ShapeDecoration(
+        //             gradient: const LinearGradient(
+        //               begin: Alignment(0.00, -1.00),
+        //               end: Alignment(0, 1),
+        //               colors: [Color(0xFF742BBA), Color(0xFFB96CFF)],
+        //             ),
+        //             shape: RoundedRectangleBorder(
+        //               borderRadius: BorderRadius.circular(20),
+        //             ),
+        //             shadows: const [
+        //               BoxShadow(
+        //                 color: Color(0x54000000),
+        //                 blurRadius: 13,
+        //                 offset: Offset(0, 0),
+        //                 spreadRadius: 2,
+        //               )
+        //             ],
+        //           ),
+        //         ),
+        //       ),
+        // const Positioned(
+        //         right: 84,
+        //         bottom: 42,
+        //         child: Text(
+        //           'Continue',
+        //           style: TextStyle(
+        //             color: Colors.white,
+        //             fontSize: 16,
+        //             fontFamily: 'Montserrat',
+        //             fontWeight: FontWeight.w600,
+        //           ),
+        //         ),
+        //       ),
+        Positioned(
+          bottom: 50,
+          right: 20,
+          child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                    elevation: 6,
+                    side: const BorderSide(
+                      color: Color(0xFFB96CFF),
+                    ),
+                    minimumSize: const Size(180, 60),
+                    backgroundColor: const Color(0xFFB96CFF),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginPage()));
+                  },
+                  child: const Text(
+                    "Continue",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.white,
+                    ),
+                  ),
+          ),
+        )
+
+
+        
 
               
 
