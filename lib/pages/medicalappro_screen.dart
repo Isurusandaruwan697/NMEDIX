@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'dashboard_page.dart';
+import 'package:nmedix/widgets/date_picker_card.dart';
+import 'package:nmedix/widgets/time_picker_card.dart';
 
 class MedicalApproval extends StatefulWidget {
   const MedicalApproval({super.key});
@@ -12,14 +13,14 @@ class MedicalApproval extends StatefulWidget {
 class _MedicalApprovalState extends State<MedicalApproval> {
   @override
   Widget build(BuildContext context) {
-     final devHeight = MediaQuery.of(context).size.height;
+    final devHeight = MediaQuery.of(context).size.height;
     final devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Container( 
-       width: devWidth,
+      body: Container(
+        width: devWidth,
         height: devHeight,
         color: Colors.white,
-         child: Stack(
+        child: Stack(
           children: [
             //purple back container
             Positioned(
@@ -73,7 +74,8 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                 ),
               ),
             ),
-              //white big container
+
+            //white big container
             Positioned(
               left: devWidth / 12 * 1,
               top: 170,
@@ -338,7 +340,8 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                         ),
                       ),
                     ),
- //time picker
+
+                    //time picker
                     Positioned(
                       left: 10,
                       top: 350,
@@ -420,7 +423,69 @@ class _MedicalApprovalState extends State<MedicalApproval> {
               ),
             ),
 
-    ),
-    ) ;
+            //submit button
+            Positioned(
+              left: devWidth * 0.5 - 80,
+              top: devHeight / 7 * 5.1 + 128 + 20,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Dashboard()),
+                  );
+                },
+                child: Container(
+                  width: 160,
+                  height: 48,
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        left: 0,
+                        top: 0,
+                        child: Container(
+                          width: 160,
+                          height: 48,
+                          decoration: ShapeDecoration(
+                            gradient: LinearGradient(
+                              begin: Alignment(0.00, -1.00),
+                              end: Alignment(0, 1),
+                              colors: [Color(0xFF742BBA), Color(0xFFB96CFF)],
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            shadows: [
+                              BoxShadow(
+                                color: Color(0x54000000),
+                                blurRadius: 13,
+                                offset: Offset(0, 0),
+                                spreadRadius: 2,
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        left: 50,
+                        top: 14,
+                        child: Text(
+                          'Submit',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
