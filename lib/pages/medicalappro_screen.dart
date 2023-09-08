@@ -10,6 +10,14 @@ class MedicalApproval extends StatefulWidget {
 class _MedicalApprovalState extends State<MedicalApproval> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+     final devHeight = MediaQuery.of(context).size.height;
+    final devWidth = MediaQuery.of(context).size.width;
+    return Scaffold(
+      body: Container( 
+       width: devWidth,
+        height: devHeight,
+        color: Colors.white,
+    ),
+    ) ;
   }
 }
