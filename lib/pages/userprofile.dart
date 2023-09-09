@@ -8,9 +8,12 @@ class userprofile extends StatefulWidget {
 }
 
 class _userprofileState extends State<userprofile> {
-  String name = '50';
+  String name = 'dewmi';
   int index = 10;
   int birthyear = 08;
+  String email = '100';
+  String bloodgroup = '5';
+  int batch = 10;
 
   @override
   Widget build(BuildContext context) {
@@ -59,6 +62,16 @@ class _userprofileState extends State<userprofile> {
                                 fontWeight: FontWeight.w800,
                               ),
                             ),
+
+                            /*Text(
+            name,
+            style: const TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Montserrat',
+              fontSize: 20,
+            ),
+          ),*/
                             Text(
                               'Student',
                               style: TextStyle(
@@ -187,6 +200,16 @@ class _userprofileState extends State<userprofile> {
             ),
           ),
 
+          Text(
+            email,
+            style: const TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Montserrat',
+              fontSize: 20,
+            ),
+          ),
+
           const Positioned(
             left: 25,
             top: 600,
@@ -201,6 +224,16 @@ class _userprofileState extends State<userprofile> {
             ),
           ),
 
+          Text(
+            bloodgroup,
+            style: const TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Montserrat',
+              fontSize: 20,
+            ),
+          ),
+
           const Positioned(
             left: 25,
             top: 665,
@@ -212,6 +245,16 @@ class _userprofileState extends State<userprofile> {
                 fontFamily: 'Montserrat',
                 fontWeight: FontWeight.w500,
               ),
+            ),
+          ),
+
+          Text(
+            batch.toStringAsFixed(0),
+            style: const TextStyle(
+              color: Color.fromARGB(0, 67, 67, 63),
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Montserrat',
+              fontSize: 20,
             ),
           ),
 
