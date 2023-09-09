@@ -23,7 +23,6 @@ class _splashState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    double devHeight = MediaQuery.of(context).size.height;
     double devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Column(
