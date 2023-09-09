@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:medix/widgets/date_picker_card.dart';
+import 'package:medix/widgets/time_picker_card.dart';
 import 'dashboard_page.dart';
-import 'package:nmedix/widgets/date_picker_card.dart';
-import 'package:nmedix/widgets/time_picker_card.dart';
+// import 'package:nmedix/widgets/date_picker_card.dart';
+// import 'package:nmedix/widgets/time_picker_card.dart';
 
 class MedicalApproval extends StatefulWidget {
   const MedicalApproval({super.key});
@@ -11,6 +13,10 @@ class MedicalApproval extends StatefulWidget {
 }
 
 class _MedicalApprovalState extends State<MedicalApproval> {
+  TextEditingController medinameController = TextEditingController();
+  TextEditingController mediindexController = TextEditingController();
+  TextEditingController mediperceptionController = TextEditingController();
+  TextEditingController medistatusController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final devHeight = MediaQuery.of(context).size.height;
@@ -140,6 +146,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                                   ],
                                 ),
                                 child: TextField(
+                                  controller: medinameController,
                                   decoration: InputDecoration(
                                     hintText: '     Enter Your Name',
                                     hintStyle: TextStyle(
@@ -199,6 +206,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                                   ],
                                 ),
                                 child: TextField(
+                                  controller: mediindexController,
                                   decoration: InputDecoration(
                                     hintText: '     Enter Your Index',
                                     hintStyle: TextStyle(
@@ -258,6 +266,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                                   ],
                                 ),
                                 child: TextField(
+                                  controller: mediperceptionController,
                                   decoration: InputDecoration(
                                     hintText:
                                         '     Enter Your Perception Number',
@@ -363,7 +372,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                       left: 20,
                       top: 405,
                       child: Text(
-                        'Faculty',
+                        'Status',
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
@@ -401,8 +410,9 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                                   ],
                                 ),
                                 child: TextField(
+                                  controller: medistatusController,
                                   decoration: InputDecoration(
-                                    hintText: '     Enter Your Faculty',
+                                    hintText: '     Tell about your illness',
                                     hintStyle: TextStyle(
                                       color: Color(0xFFC4C4C4),
                                       fontSize: 13,
