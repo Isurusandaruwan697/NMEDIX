@@ -146,6 +146,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                                   ],
                                 ),
                                 child: TextField(
+                                  controller: medinameController,
                                   decoration: InputDecoration(
                                     hintText: '     Enter Your Name',
                                     hintStyle: TextStyle(
@@ -205,6 +206,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                                   ],
                                 ),
                                 child: TextField(
+                                  controller: mediindexController,
                                   decoration: InputDecoration(
                                     hintText: '     Enter Your Index',
                                     hintStyle: TextStyle(
@@ -264,6 +266,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                                   ],
                                 ),
                                 child: TextField(
+                                  controller: mediperceptionController,
                                   decoration: InputDecoration(
                                     hintText:
                                         '     Enter Your Perception Number',
@@ -369,7 +372,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                       left: 20,
                       top: 405,
                       child: Text(
-                        'Faculty',
+                        'Status',
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
@@ -407,8 +410,9 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                                   ],
                                 ),
                                 child: TextField(
+                                  controller: medistatusController,
                                   decoration: InputDecoration(
-                                    hintText: '     Enter Your Faculty',
+                                    hintText: '     Tell about your illness',
                                     hintStyle: TextStyle(
                                       color: Color(0xFFC4C4C4),
                                       fontSize: 13,
