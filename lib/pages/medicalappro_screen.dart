@@ -102,6 +102,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                     )
                   ],
                 ),
+                //name textfield section
                 child: Stack(
                   children: [
                     Positioned(
@@ -164,6 +165,8 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                         ),
                       ),
                     ),
+                                    //Index textfield section
+
                     Positioned(
                       left: 20,
                       top: 95,
@@ -224,6 +227,8 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                         ),
                       ),
                     ),
+                                    //Perception number textfield section
+
                     Positioned(
                       left: 20,
                       top: 177,
@@ -311,6 +316,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                         ),
                       ),
                     ),
+                    // date picker
                     Positioned(
                       left: 10,
                       top: 285,
@@ -320,7 +326,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                         child: ListView(
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
-                          padding: const EdgeInsets.symmetric(
+                          padding:  EdgeInsets.symmetric(
                               horizontal: 7, vertical: 10),
                           children: [
                             DatePickerCard(datetext: '01\nsep'),
@@ -360,7 +366,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                         child: ListView(
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
-                          padding: const EdgeInsets.symmetric(
+                          padding:  EdgeInsets.symmetric(
                               horizontal: 7, vertical: 10),
                           children: [
                             TimePickerCard(),
