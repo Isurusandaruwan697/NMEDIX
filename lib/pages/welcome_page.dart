@@ -11,6 +11,7 @@ class WelcPage extends StatefulWidget {
 class _WelcPageState extends State<WelcPage> {
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
         return  Scaffold(
       body: Column(
         children: [
@@ -51,7 +52,7 @@ class _WelcPageState extends State<WelcPage> {
                 top: 200,
                 child: SizedBox(
                   width: 250,
-                  height: 70,
+                  height: 75,
                   child: Text(
                     "Let's get you started on your health journey.\nFollow these steps to unlock a world \nof seamless healthcare:",
                     style: TextStyle(
@@ -83,8 +84,8 @@ class _WelcPageState extends State<WelcPage> {
                     
           
               Positioned(
-                  left: 15,
-                  top: 352,
+                  left: 35,
+                  top: height * 0.40,
                     child: Align(
                       child: Container(
                         width: MediaQuery.of(context).size.width*0.8,
@@ -117,12 +118,12 @@ class _WelcPageState extends State<WelcPage> {
                                     left: 10,
                                     top: 35,
                                     child: Container(
-                                      width: 235,
+                                      width: 250,
                                       height: 165,
                                       child: const Stack(
                       children: [
                         Positioned(
-                          left: 0,
+                          left: 20,
                           top: 75,
                           child: Text(
                             'Step 2: Schedule  appointments with just a \nfew taps. our health, your way.',
@@ -135,7 +136,7 @@ class _WelcPageState extends State<WelcPage> {
                           ),
                         ),
                         Positioned(
-                          left: 0,
+                          left: 20,
                           top: 0,
                           child: SizedBox(
                             width: 259,
@@ -151,7 +152,7 @@ class _WelcPageState extends State<WelcPage> {
                           ),
                         ),
                         Positioned(
-                          left: 0,
+                          left: 20,
                           top: 135,
                           child: Text(
                             "Step 3: Discover our innovative features for\neffortless  appointment booking and more...",
