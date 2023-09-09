@@ -11,6 +11,8 @@ class MyAppoint extends StatefulWidget {
 class _MyAppointState extends State<MyAppoint> {
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return  Scaffold(
       body: Column(
         children: [
@@ -64,6 +66,34 @@ class _MyAppointState extends State<MyAppoint> {
                   ),
                 ),
               ),
+
+              Positioned(
+                left: width * 0.10,
+                top: 353,
+                child: Container(
+                  width: width * 0.8,
+                  height: height * 0.12,
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        left: 0,
+                        top: 0,
+                        child: Container(
+                          width: width * 0.8,
+                          height: height * 0.12,
+                          decoration: ShapeDecoration(
+                            color: Colors.black,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15)
+                            )
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              )
+
               ],
             ),
           )
