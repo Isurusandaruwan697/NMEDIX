@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:medix/pages/start_page.dart';
 
 
 class MyAppoint extends StatefulWidget {
