@@ -13,6 +13,10 @@ class MedicalApproval extends StatefulWidget {
 }
 
 class _MedicalApprovalState extends State<MedicalApproval> {
+  TextEditingController medinameController = TextEditingController();
+  TextEditingController mediindexController = TextEditingController();
+  TextEditingController mediperceptionController = TextEditingController();
+  TextEditingController medistatusController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final devHeight = MediaQuery.of(context).size.height;
