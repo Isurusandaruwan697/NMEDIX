@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:medix/pages/article_page.dart';
+import 'package:medix/pages/feedback_page.dart';
 import 'package:medix/widgets/homepage_card_small.dart';
 
 class Dashboard extends StatefulWidget {
@@ -80,52 +82,60 @@ class _DashboardState extends State<Dashboard> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                width: devWidth * 0.87,
-                height: (devHeight * 0.4) / 2,
-                child: Card(
-                  elevation: 6,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.0),
-                  ),
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        top: 0,
-                        left: 0,
-                        child: Container(
-                          child: const Padding(
-                            padding: EdgeInsets.fromLTRB(10, 3, 0, 0),
-                            child: Text(
-                              "Article",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          width: 200,
-                          height: 30,
-                          decoration: const ShapeDecoration(
-                            color: Color(0xFFB96CFF),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(13),
-                                bottomRight: Radius.circular(13),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Article()),
+                  );
+                },
+                child: Container(
+                  width: devWidth * 0.87,
+                  height: (devHeight * 0.4) / 2,
+                  child: Card(
+                    elevation: 6,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          top: 0,
+                          left: 0,
+                          child: Container(
+                            child: const Padding(
+                              padding: EdgeInsets.fromLTRB(10, 3, 0, 0),
+                              child: Text(
+                                "Article",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold),
                               ),
                             ),
-                            shadows: [
-                              BoxShadow(
-                                color: Color(0x3F000000),
-                                blurRadius: 4,
-                                offset: Offset(0, 4),
-                                spreadRadius: 0,
-                              )
-                            ],
+                            width: 200,
+                            height: 30,
+                            decoration: const ShapeDecoration(
+                              color: Color(0xFFB96CFF),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(13),
+                                  bottomRight: Radius.circular(13),
+                                ),
+                              ),
+                              shadows: [
+                                BoxShadow(
+                                  color: Color(0x3F000000),
+                                  blurRadius: 4,
+                                  offset: Offset(0, 4),
+                                  spreadRadius: 0,
+                                )
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -139,7 +149,7 @@ class _DashboardState extends State<Dashboard> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Dashboard()),
+                    MaterialPageRoute(builder: (context) => FeedbackScreen()),
                   );
                 },
                 child: Container(

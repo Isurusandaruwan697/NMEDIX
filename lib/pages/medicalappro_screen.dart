@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:medix/pages/dashboard_page.dart';
 import 'package:medix/widgets/date_picker_card.dart';
+import 'package:medix/widgets/time_picker_card.dart';
+import 'dashboard_page.dart';
+// import 'package:nmedix/widgets/date_picker_card.dart';
+// import 'package:nmedix/widgets/time_picker_card.dart';
 
-class EcApproval extends StatefulWidget {
-  const EcApproval({super.key});
+class MedicalApproval extends StatefulWidget {
+  const MedicalApproval({super.key});
 
   @override
-  State<EcApproval> createState() => _EcApprovalState();
+  State<MedicalApproval> createState() => _MedicalApprovalState();
 }
 
-class _EcApprovalState extends State<EcApproval> {
-  TextEditingController ECNameController = TextEditingController();
-  TextEditingController ECBatchController = TextEditingController();
-  TextEditingController ECIdController = TextEditingController();
-  TextEditingController ECSubjectController = TextEditingController();
-  TextEditingController ECFacultyController = TextEditingController();
-
+class _MedicalApprovalState extends State<MedicalApproval> {
   @override
   Widget build(BuildContext context) {
     final devHeight = MediaQuery.of(context).size.height;
@@ -42,7 +39,7 @@ class _EcApprovalState extends State<EcApproval> {
                   gradient: LinearGradient(
                     begin: Alignment(0.00, -1.00),
                     end: Alignment(0.00, 1.00),
-                    colors: const [Color(0xFF742BBA), Color(0xFFB96CFF)],
+                    colors: [Color(0xFF742BBA), Color(0xFFB96CFF)],
                   ),
                 ),
               ),
@@ -52,7 +49,7 @@ class _EcApprovalState extends State<EcApproval> {
               left: 40,
               top: 70,
               child: Text(
-                'EC Approval',
+                'Reserve your\nspot',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 38,
@@ -83,16 +80,16 @@ class _EcApprovalState extends State<EcApproval> {
             //white big container
             Positioned(
               left: devWidth / 12 * 1,
-              top: 128,
+              top: 170,
               child: Container(
                 width: devWidth / 12 * 10,
-                height: devHeight / 7 * 5.1,
+                height: devHeight / 7 * 4.6,
                 decoration: ShapeDecoration(
                   color: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(27),
                   ),
-                  shadows: const [
+                  shadows: [
                     BoxShadow(
                       color: Color(0x3F000000),
                       blurRadius: 4,
@@ -101,6 +98,7 @@ class _EcApprovalState extends State<EcApproval> {
                     )
                   ],
                 ),
+                //name textfield section
                 child: Stack(
                   children: [
                     Positioned(
@@ -118,7 +116,7 @@ class _EcApprovalState extends State<EcApproval> {
                     ),
                     Positioned(
                       left: 20,
-                      top: 38,
+                      top: 40,
                       child: Container(
                         width: 306,
                         height: 44,
@@ -135,7 +133,7 @@ class _EcApprovalState extends State<EcApproval> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(15),
                                   ),
-                                  shadows: const [
+                                  shadows: [
                                     BoxShadow(
                                       color: Color(0x3F000000),
                                       blurRadius: 9,
@@ -162,68 +160,11 @@ class _EcApprovalState extends State<EcApproval> {
                         ),
                       ),
                     ),
+                                    //Index textfield section
+
                     Positioned(
                       left: 20,
                       top: 95,
-                      child: Text(
-                        'Batch',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      left: 20,
-                      top: 115,
-                      child: Container(
-                        width: 306,
-                        height: 44,
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              left: 0,
-                              top: 0,
-                              child: Container(
-                                width: devWidth / 12 * 8.8,
-                                height: 44,
-                                decoration: ShapeDecoration(
-                                  color: Colors.white,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  shadows: const [
-                                    BoxShadow(
-                                      color: Color(0x3F000000),
-                                      blurRadius: 9,
-                                      offset: Offset(1, 4),
-                                      spreadRadius: 0,
-                                    ),
-                                  ],
-                                ),
-                                child: TextField(
-                                  decoration: InputDecoration(
-                                    hintText: '     Enter Your Batch',
-                                    hintStyle: TextStyle(
-                                      color: Color(0xFFC4C4C4),
-                                      fontSize: 13,
-                                      fontFamily: 'Montserrat',
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                    border: InputBorder.none,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      left: 20,
-                      top: 177,
                       child: Text(
                         'Index Number',
                         style: TextStyle(
@@ -236,7 +177,7 @@ class _EcApprovalState extends State<EcApproval> {
                     ),
                     Positioned(
                       left: 20,
-                      top: 199,
+                      top: 117,
                       child: Container(
                         width: 306,
                         height: 44,
@@ -253,7 +194,7 @@ class _EcApprovalState extends State<EcApproval> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(15),
                                   ),
-                                  shadows: const [
+                                  shadows: [
                                     BoxShadow(
                                       color: Color(0x3F000000),
                                       blurRadius: 9,
@@ -280,11 +221,13 @@ class _EcApprovalState extends State<EcApproval> {
                         ),
                       ),
                     ),
+                                    //Perception number textfield section
+
                     Positioned(
                       left: 20,
-                      top: 260,
+                      top: 177,
                       child: Text(
-                        'Subject',
+                        'Perception Number',
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
@@ -295,7 +238,7 @@ class _EcApprovalState extends State<EcApproval> {
                     ),
                     Positioned(
                       left: 20,
-                      top: 282,
+                      top: 201,
                       child: Container(
                         width: 306,
                         height: 44,
@@ -312,7 +255,7 @@ class _EcApprovalState extends State<EcApproval> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(15),
                                   ),
-                                  shadows: const [
+                                  shadows: [
                                     BoxShadow(
                                       color: Color(0x3F000000),
                                       blurRadius: 9,
@@ -323,7 +266,8 @@ class _EcApprovalState extends State<EcApproval> {
                                 ),
                                 child: TextField(
                                   decoration: InputDecoration(
-                                    hintText: '     Enter Subject Name',
+                                    hintText:
+                                        '     Enter Your Perception Number',
                                     hintStyle: TextStyle(
                                       color: Color(0xFFC4C4C4),
                                       fontSize: 13,
@@ -341,7 +285,91 @@ class _EcApprovalState extends State<EcApproval> {
                     ),
                     Positioned(
                       left: 20,
-                      top: 343,
+                      top: 260,
+                      child: Text(
+                        'Date',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 45,
+                      top: 280,
+                      child: Text(
+                        'September 2023',
+                        style: TextStyle(
+                          color: Colors.purple,
+                          fontSize: 10,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    // date picker
+                    Positioned(
+                      left: 10,
+                      top: 285,
+                      child: SizedBox(
+                        height: 70,
+                        width: devWidth / 12 * 9.5,
+                        child: ListView(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          padding:  EdgeInsets.symmetric(
+                              horizontal: 7, vertical: 10),
+                          children: [
+                            DatePickerCard(datetext: '01\nsep'),
+                            DatePickerCard(datetext: '02\nsep'),
+                            DatePickerCard(datetext: '03\nsep'),
+                            // Padding(
+                            //   padding:
+                            //       const EdgeInsets.symmetric(horizontal: 4.0),
+                            //   child: ElevatedButton(
+                            //     style: ElevatedButton.styleFrom(
+                            //       backgroundColor:
+                            //           Theme.of(context).highlightColor,
+                            //       shape: RoundedRectangleBorder(
+                            //         borderRadius: BorderRadius.circular(12.0),
+                            //       ),
+                            //     ),
+                            //     onPressed: () {},
+                            //     child: const Text(
+                            //       '32\nsep',
+                            //       textAlign: TextAlign.center,
+                            //       style: TextStyle(color: Colors.white),
+                            //     ),
+                            //   ),
+                            // ),
+                          ],
+                        ),
+                      ),
+                    ),
+
+                    //time picker
+                    Positioned(
+                      left: 10,
+                      top: 350,
+                      child: SizedBox(
+                        height: 40,
+                        width: devWidth / 12 * 9.5,
+                        child: ListView(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          padding:  EdgeInsets.symmetric(
+                              horizontal: 7, vertical: 10),
+                          children: [
+                            TimePickerCard(),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 20,
+                      top: 405,
                       child: Text(
                         'Faculty',
                         style: TextStyle(
@@ -354,7 +382,7 @@ class _EcApprovalState extends State<EcApproval> {
                     ),
                     Positioned(
                       left: 20,
-                      top: 365,
+                      top: 430,
                       child: Container(
                         width: 306,
                         height: 44,
@@ -371,7 +399,7 @@ class _EcApprovalState extends State<EcApproval> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(15),
                                   ),
-                                  shadows: const [
+                                  shadows: [
                                     BoxShadow(
                                       color: Color(0x3F000000),
                                       blurRadius: 9,
@@ -394,78 +422,6 @@ class _EcApprovalState extends State<EcApproval> {
                                 ),
                               ),
                             ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      left: 20,
-                      top: 430,
-                      child: Text(
-                        'Date',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      left: 45,
-                      top: 450,
-                      child: Text(
-                        'September 2023',
-                        style: TextStyle(
-                          color: Colors.purple,
-                          fontSize: 10,
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      left: 10,
-                      top: 455,
-                      child: SizedBox(
-                        height: 70,
-                        width: devWidth / 12 * 9.5,
-                        child: ListView(
-                          shrinkWrap: true,
-                          scrollDirection: Axis.horizontal,
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 7, vertical: 10),
-                          children: const [
-                            DatePickerCard(datetext: '01\nsep'),
-                            DatePickerCard(datetext: '02\nsep'),
-                            DatePickerCard(datetext: '03\nsep'),
-                            DatePickerCard(datetext: '04\nsep'),
-                            DatePickerCard(datetext: '05\nsep'),
-                            DatePickerCard(datetext: '06\nsep'),
-                            DatePickerCard(datetext: '07\nsep'),
-                            DatePickerCard(datetext: '08\nsep'),
-                            DatePickerCard(datetext: '09\nsep'),
-                            DatePickerCard(datetext: '10\nsep'),
-                            DatePickerCard(datetext: '11\nsep'),
-                            DatePickerCard(datetext: '12\nsep'),
-                            DatePickerCard(datetext: '13\nsep'),
-                            DatePickerCard(datetext: '14\nsep'),
-                            DatePickerCard(datetext: '15\nsep'),
-                            DatePickerCard(datetext: '16\nsep'),
-                            DatePickerCard(datetext: '17\nsep'),
-                            DatePickerCard(datetext: '18\nsep'),
-                            DatePickerCard(datetext: '19\nsep'),
-                            DatePickerCard(datetext: '20\nsep'),
-                            DatePickerCard(datetext: '21\nsep'),
-                            DatePickerCard(datetext: '22\nsep'),
-                            DatePickerCard(datetext: '23\nsep'),
-                            DatePickerCard(datetext: '24\nsep'),
-                            DatePickerCard(datetext: '25\nsep'),
-                            DatePickerCard(datetext: '26\nsep'),
-                            DatePickerCard(datetext: '27\nsep'),
-                            DatePickerCard(datetext: '28\nsep'),
-                            DatePickerCard(datetext: '29\nsep'),
-                            DatePickerCard(datetext: '30\nsep'),
                           ],
                         ),
                       ),
@@ -501,15 +457,12 @@ class _EcApprovalState extends State<EcApproval> {
                             gradient: LinearGradient(
                               begin: Alignment(0.00, -1.00),
                               end: Alignment(0, 1),
-                              colors: const [
-                                Color(0xFF742BBA),
-                                Color(0xFFB96CFF)
-                              ],
+                              colors: [Color(0xFF742BBA), Color(0xFFB96CFF)],
                             ),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20),
                             ),
-                            shadows: const [
+                            shadows: [
                               BoxShadow(
                                 color: Color(0x54000000),
                                 blurRadius: 13,

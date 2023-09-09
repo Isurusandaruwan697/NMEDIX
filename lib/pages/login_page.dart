@@ -9,6 +9,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     bool _passwordVisible = false;
@@ -59,7 +62,7 @@ class _LoginPageState extends State<LoginPage> {
                       bottom: 0,
                       left: 120,
                       child: Image.asset(
-                        "assets/loginDoc.png",
+                        "assets/logindoc.png",
                         height: devHeight * 0.4,
                       ),
                     ),
@@ -109,8 +112,9 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ],
                         ),
-                        child: const TextField(
-                          decoration: InputDecoration(
+                        child: TextField(
+                          controller: usernameController,
+                          decoration: const InputDecoration(
                             hintText: '     Enter Your Username',
                             hintStyle: TextStyle(
                               color: Color(0xFFC4C4C4),
@@ -170,6 +174,7 @@ class _LoginPageState extends State<LoginPage> {
                           ],
                         ),
                         child: TextField(
+                          controller: passwordController,
                           obscureText: !_passwordVisible,
                           decoration: InputDecoration(
                             hintText: '     Enter Your Password',
