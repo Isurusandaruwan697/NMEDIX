@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medix/pages/login_page.dart';
 
 class WelcPage extends StatefulWidget {
   const WelcPage({super.key});
@@ -13,7 +14,7 @@ class _WelcPageState extends State<WelcPage> {
     return Scaffold(
       body: Column(
         children: [
-          Container(
+          SizedBox(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             child: Stack(
@@ -82,7 +83,7 @@ class _WelcPageState extends State<WelcPage> {
                   left: 20,
                   top: 352,
                   child: Align(
-                    child: Container(
+                    child: SizedBox(
                       width: MediaQuery.of(context).size.width * 0.8,
                       height: 250,
                       child: Stack(
@@ -113,7 +114,7 @@ class _WelcPageState extends State<WelcPage> {
                           Positioned(
                             left: 25,
                             top: 35,
-                            child: Container(
+                            child: SizedBox(
                               width: 235,
                               height: 165,
                               child: const Stack(
@@ -217,10 +218,10 @@ class _WelcPageState extends State<WelcPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const WelcPage()),
+                            builder: (context) => const LoginPage()),
                       );
                     },
-                    child: Container(
+                    child: SizedBox(
                       width: 160,
                       height: 48,
                       child: Stack(
