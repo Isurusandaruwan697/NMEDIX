@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:medix/widgets/date_picker_card.dart';
+import 'package:medix/widgets/time_picker_card.dart';
 import 'dashboard_page.dart';
-import 'package:nmedix/widgets/date_picker_card.dart';
-import 'package:nmedix/widgets/time_picker_card.dart';
+// import 'package:nmedix/widgets/date_picker_card.dart';
+// import 'package:nmedix/widgets/time_picker_card.dart';
 
 class MedicalApproval extends StatefulWidget {
   const MedicalApproval({super.key});
