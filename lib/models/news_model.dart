@@ -1,18 +1,11 @@
 class NewsData {
   String? title;
-  String? author;
   String? content;
   String? urlToImage;
   String? date;
+  String? author;
 
-  //let's create the constructor
-  NewsData(
-    this.title,
-    this.author,
-    this.content,
-    this.date,
-    this.urlToImage,
-  );
+  NewsData(this.title, this.author, this.content, this.date, this.urlToImage);
 
   //we will use dummy data to generate the news,but you can use a third party api or your own backend to extract the data
   //I will copy the data from my previous code, you can create your own data , I used newsApi to get the data

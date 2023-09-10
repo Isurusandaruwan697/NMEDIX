@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:medix/models/news_model.dart';
 
 class Article extends StatefulWidget {
   const Article({super.key});
