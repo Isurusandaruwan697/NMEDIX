@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medix/pages/login_page.dart';
-import 'package:medix/pages/start_page.dart';
+import 'package:medix/pages/dashboard_page.dart';
 
 class TearmsPage extends StatefulWidget {
   const TearmsPage({super.key});
@@ -177,58 +176,174 @@ class _TearmsPageState extends State<TearmsPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    side: const BorderSide(
-                      color: Color(0xFFB96CFF),
-                    ),
-                    elevation: 6,
-                    minimumSize: const Size(150, 40),
-                    backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15.0),
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => const start()));
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const TearmsPage()),
+                    );
                   },
-                  child: const Text(
-                    "Decline",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFFB96CFF),
+                  child: SizedBox(
+                    width: 160,
+                    height: 48,
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          left: 0,
+                          top: 0,
+                          child: Container(
+                            width: 160,
+                            height: 48,
+                            decoration: ShapeDecoration(
+                              gradient: const LinearGradient(
+                                begin: Alignment(0.00, -1.00),
+                                end: Alignment(0, 1),
+                                colors: [
+                                  Color.fromARGB(255, 252, 248, 255),
+                                  Color.fromARGB(255, 243, 239, 246)
+                                ],
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              shadows: const [
+                                BoxShadow(
+                                  color: Color(0x54000000),
+                                  blurRadius: 13,
+                                  offset: Offset(0, 0),
+                                  spreadRadius: 2,
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        const Positioned(
+                          left: 45,
+                          top: 14,
+                          child: Text(
+                            'Decline',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 121, 68, 172),
+                              fontSize: 20,
+                              fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    elevation: 6,
-                    side: const BorderSide(
-                      color: Color(0xFFB96CFF),
-                    ),
-                    minimumSize: const Size(150, 40),
-                    backgroundColor: const Color(0xFFB96CFF),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15.0),
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const LoginPage()));
+                // ElevatedButton(
+                //   style: ElevatedButton.styleFrom(
+                //     side: const BorderSide(
+                //       color: Color(0xFFB96CFF),
+                //     ),
+                //     elevation: 6,
+                //     minimumSize: const Size(150, 40),
+                //     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+                //     shape: RoundedRectangleBorder(
+                //       borderRadius: BorderRadius.circular(15.0),
+                //     ),
+                //   ),
+                //   onPressed: () {
+                //     Navigator.pushReplacement(context,
+                //         MaterialPageRoute(builder: (context) => const start()));
+                //   },
+                //   child: const Text(
+                //     "Decline",
+                //     style: TextStyle(
+                //       fontSize: 20,
+                //       fontWeight: FontWeight.bold,
+                //       color: Color(0xFFB96CFF),
+                //     ),
+                //   ),
+                // ),
+
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Dashboard()),
+                    );
                   },
-                  child: const Text(
-                    "Accept",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                  child: SizedBox(
+                    width: 160,
+                    height: 48,
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          left: 0,
+                          top: 0,
+                          child: Container(
+                            width: 160,
+                            height: 48,
+                            decoration: ShapeDecoration(
+                              gradient: const LinearGradient(
+                                begin: Alignment(0.00, -1.00),
+                                end: Alignment(0, 1),
+                                colors: [Color(0xFF742BBA), Color(0xFFB96CFF)],
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              shadows: const [
+                                BoxShadow(
+                                  color: Color(0x54000000),
+                                  blurRadius: 13,
+                                  offset: Offset(0, 0),
+                                  spreadRadius: 2,
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        const Positioned(
+                          left: 45,
+                          top: 14,
+                          child: Text(
+                            'Accept',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
+                // ElevatedButton(
+                //   style: ElevatedButton.styleFrom(
+                //     elevation: 6,
+                //     side: const BorderSide(
+                //       color: Color(0xFFB96CFF),
+                //     ),
+                //     minimumSize: const Size(150, 40),
+                //     backgroundColor: const Color(0xFFB96CFF),
+                //     shape: RoundedRectangleBorder(
+                //       borderRadius: BorderRadius.circular(15.0),
+                //     ),
+                //   ),
+                //   onPressed: () {
+                //     Navigator.pushReplacement(
+                //         context,
+                //         MaterialPageRoute(
+                //             builder: (context) => const LoginPage()));
+                //   },
+                //   child: const Text(
+                //     "Accept",
+                //     style: TextStyle(
+                //       fontSize: 20,
+                //       fontWeight: FontWeight.bold,
+                //       color: Colors.white,
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ],

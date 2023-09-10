@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medix/pages/dashboard_page.dart';
+import 'package:medix/pages/tearms_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -9,9 +9,12 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    bool _passwordVisible = false;
+    bool passwordVisible = false;
 
     final devHeight = MediaQuery.of(context).size.height;
     final devWidth = MediaQuery.of(context).size.width;
@@ -59,7 +62,7 @@ class _LoginPageState extends State<LoginPage> {
                       bottom: 0,
                       left: 120,
                       child: Image.asset(
-                        "assets/loginDoc.png",
+                        "assets/logindoc.png",
                         height: devHeight * 0.4,
                       ),
                     ),
@@ -84,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
             Positioned(
               left: 30,
               top: devHeight * 0.51,
-              child: Container(
+              child: SizedBox(
                 width: 330,
                 height: 50,
                 child: Stack(
@@ -109,8 +112,9 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ],
                         ),
-                        child: const TextField(
-                          decoration: InputDecoration(
+                        child: TextField(
+                          controller: usernameController,
+                          decoration: const InputDecoration(
                             hintText: '     Enter Your Username',
                             hintStyle: TextStyle(
                               color: Color(0xFFC4C4C4),
@@ -144,7 +148,7 @@ class _LoginPageState extends State<LoginPage> {
             Positioned(
               left: 30,
               top: devHeight * 0.66,
-              child: Container(
+              child: SizedBox(
                 width: 330,
                 height: 50,
                 child: Stack(
@@ -170,7 +174,8 @@ class _LoginPageState extends State<LoginPage> {
                           ],
                         ),
                         child: TextField(
-                          obscureText: !_passwordVisible,
+                          controller: passwordController,
+                          obscureText: !passwordVisible,
                           decoration: InputDecoration(
                             hintText: '     Enter Your Password',
                             hintStyle: const TextStyle(
@@ -183,12 +188,12 @@ class _LoginPageState extends State<LoginPage> {
                             suffixIcon: GestureDetector(
                               onTap: () {
                                 setState(() {
-                                  _passwordVisible =
-                                      !_passwordVisible; // Toggle password visibility
+                                  passwordVisible =
+                                      !passwordVisible; // Toggle password visibility
                                 });
                               },
                               child: Icon(
-                                _passwordVisible
+                                passwordVisible
                                     ? Icons.visibility
                                     : Icons.visibility_off_outlined,
                                 color: Colors.grey,
@@ -210,10 +215,10 @@ class _LoginPageState extends State<LoginPage> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const Dashboard()),
+                    MaterialPageRoute(builder: (context) => const TearmsPage()),
                   );
                 },
-                child: Container(
+                child: SizedBox(
                   width: 160,
                   height: 48,
                   child: Stack(

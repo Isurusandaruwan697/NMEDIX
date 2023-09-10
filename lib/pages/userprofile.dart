@@ -8,6 +8,13 @@ class userprofile extends StatefulWidget {
 }
 
 class _userprofileState extends State<userprofile> {
+  String name = 'dewmi';
+  int index = 10;
+  int birthyear = 08;
+  String email = '100';
+  String bloodgroup = '5';
+  int batch = 10;
+
   @override
   Widget build(BuildContext context) {
     final devHeight = MediaQuery.of(context).size.height;
@@ -55,6 +62,16 @@ class _userprofileState extends State<userprofile> {
                                 fontWeight: FontWeight.w800,
                               ),
                             ),
+
+                            /*Text(
+            name,
+            style: const TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Montserrat',
+              fontSize: 20,
+            ),
+          ),*/
                             Text(
                               'Student',
                               style: TextStyle(
@@ -111,6 +128,16 @@ class _userprofileState extends State<userprofile> {
             ),
           ),
 
+          Text(
+            name,
+            style: const TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Montserrat',
+              fontSize: 20,
+            ),
+          ),
+
           const Positioned(
             left: 25,
             top: 405,
@@ -122,6 +149,16 @@ class _userprofileState extends State<userprofile> {
                 fontFamily: 'Montserrat',
                 fontWeight: FontWeight.w500,
               ),
+            ),
+          ),
+
+          Text(
+            index.toStringAsFixed(0),
+            style: const TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Montserrat',
+              fontSize: 20,
             ),
           ),
 
@@ -139,6 +176,16 @@ class _userprofileState extends State<userprofile> {
             ),
           ),
 
+          Text(
+            birthyear.toStringAsFixed(0),
+            style: const TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Montserrat',
+              fontSize: 20,
+            ),
+          ),
+
           const Positioned(
             left: 25,
             top: 535,
@@ -150,6 +197,16 @@ class _userprofileState extends State<userprofile> {
                 fontFamily: 'Montserrat',
                 fontWeight: FontWeight.w500,
               ),
+            ),
+          ),
+
+          Text(
+            email,
+            style: const TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Montserrat',
+              fontSize: 20,
             ),
           ),
 
@@ -167,6 +224,16 @@ class _userprofileState extends State<userprofile> {
             ),
           ),
 
+          Text(
+            bloodgroup,
+            style: const TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Montserrat',
+              fontSize: 20,
+            ),
+          ),
+
           const Positioned(
             left: 25,
             top: 665,
@@ -178,6 +245,16 @@ class _userprofileState extends State<userprofile> {
                 fontFamily: 'Montserrat',
                 fontWeight: FontWeight.w500,
               ),
+            ),
+          ),
+
+          Text(
+            batch.toStringAsFixed(0),
+            style: const TextStyle(
+              color: Color.fromARGB(0, 67, 67, 63),
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Montserrat',
+              fontSize: 20,
             ),
           ),
 
@@ -231,6 +308,10 @@ class _userprofileState extends State<userprofile> {
                         ),
                       ),
                     ),
+                    const Positioned(
+                        left: 14,
+                        top: 13,
+                        child: Icon(Icons.logout, color: Colors.white)),
                     const Positioned(
                       left: 50,
                       top: 14,

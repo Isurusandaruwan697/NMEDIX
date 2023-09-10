@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medix/pages/welcome_page.dart';
 
 class start extends StatelessWidget {
   const start({super.key});
@@ -8,16 +9,6 @@ class start extends StatelessWidget {
     final devHeight = MediaQuery.of(context).size.height;
     final devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      //backgroundColor: const Color.fromARGB(255, 201, 124, 215),
-
-      /*appBar: AppBar(
-        centerTitle: true,
-        title: const Text(
-          'Welcome To Home Page!',
-          style: TextStyle(fontSize: 25.00),
-        ),
-      ),*/
-
       body: Container(
         width: devWidth,
         height: devHeight,
@@ -39,35 +30,35 @@ class start extends StatelessWidget {
                   begin: Alignment(0.00, -1.00),
                   end: Alignment(0.00, 1.00),
                   colors: [
-                    Color.fromARGB(255, 187, 146, 226),
-                    Color(0xFFB96CFF)
+                    Color.fromARGB(255, 236, 221, 250),
+                    Color.fromARGB(255, 214, 177, 248)
+                    //  Color.fromARGB(255, 187, 146, 226),
+                    // Color(0xFFB96CFF)
                   ],
                 ),
               ),
             ),
           ),
 
-          /*Container(
-                color: Colors.blue,
-                height: 150,
-                width: 150,
-              ),*/
-
           //const Image(image: AssetImage('images/logo.png')),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 50.0),
             child: Image.asset(
-              'assets/logo.jpg',
+              'assets/logocolor.png',
               width: 400,
               height: 300,
             ),
           ),
 
-          const Image(
-            image: AssetImage('assets/intro.png'),
-            width: 400,
-            height: 800,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Image.asset(
+              'assets/intro.png',
+              width: 400,
+              height: 800,
+            ),
           ),
+
           Expanded(
             flex: 1,
             child: SizedBox(
@@ -100,29 +91,88 @@ class start extends StatelessWidget {
                   const Padding(
                     padding: EdgeInsets.all(10.0),
                   ),
-                  ElevatedButton(
-                    onPressed: () {
-                      // Add your button click logic here
-                      print('Button clicked!');
+
+                  GestureDetector(
+                    onTap: () {
+                      print('vliiol');
+
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const WelcPage()));
                     },
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0)),
-                        backgroundColor: Colors.purple),
-                    child: const Text('START', style: TextStyle(fontSize: 20)),
+                    child: SizedBox(
+                      width: 160,
+                      height: 48,
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            left: 0,
+                            top: 0,
+                            child: Container(
+                              width: 160,
+                              height: 48,
+                              decoration: ShapeDecoration(
+                                gradient: const LinearGradient(
+                                  begin: Alignment(0.00, -1.00),
+                                  end: Alignment(0, 1),
+                                  colors: [
+                                    Color(0xFF742BBA),
+                                    Color(0xFFB96CFF)
+                                  ],
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                shadows: const [
+                                  BoxShadow(
+                                    color: Color(0x54000000),
+                                    blurRadius: 13,
+                                    offset: Offset(0, 0),
+                                    spreadRadius: 2,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                          const Positioned(
+                            left: 55,
+                            top: 14,
+                            child: Text(
+                              'START',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                  // const Padding(
-                  //   padding: EdgeInsets.all(20.0),
+                  // ElevatedButton(
+                  //   onPressed: () {
+                  //     // Add your button click logic here
+                  //     print('Button clicked!');
+                  //     Navigator.push(
+                  //         context,
+                  //         MaterialPageRoute(
+                  //             builder: (context) => const start()));
+                  //   },
+                  //   style: ElevatedButton.styleFrom(
+                  //       shape: RoundedRectangleBorder(
+                  //           borderRadius: BorderRadius.circular(20.0)),
+                  //       backgroundColor: Colors.purple),
+                  //   child: const Text('START', style: TextStyle(fontSize: 20)),
                   // ),
+                  const Padding(
+                    padding: EdgeInsets.all(20.0),
+                  ),
                 ],
               ),
             ),
-            //const Image(image: AssetImage('images/logo.png')),
-            /* Image.asset(
-          'assets/logo.jpg',
-          width: 250,
-          height: 50,
-        ),*/
           ),
         ]),
       ),

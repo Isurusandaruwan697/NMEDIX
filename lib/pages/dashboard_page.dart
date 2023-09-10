@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:medix/pages/article_page.dart';
+import 'package:medix/pages/feedback_page.dart';
 import 'package:medix/widgets/homepage_card_small.dart';
 
 class Dashboard extends StatefulWidget {
@@ -57,9 +59,13 @@ class _DashboardState extends State<Dashboard> {
             ),
           ),
           const SizedBox(height: 30.0),
+
+          //Apoinment cards
+
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
+              //Medical Apoinment Card
               HomePageCardSmall(
                 devWidth: devWidth,
                 devHeight: devHeight,
@@ -67,6 +73,8 @@ class _DashboardState extends State<Dashboard> {
                 sizeboxWidth: 18,
                 imgUrl: 'assets/mreq.png',
               ),
+
+              //EC Appoinment Card
               HomePageCardSmall(
                 devWidth: devWidth,
                 devHeight: devHeight,
@@ -77,61 +85,8 @@ class _DashboardState extends State<Dashboard> {
             ],
           ),
           const SizedBox(height: 20.0),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: devWidth * 0.87,
-                height: (devHeight * 0.4) / 2,
-                child: Card(
-                  elevation: 6,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.0),
-                  ),
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        top: 0,
-                        left: 0,
-                        child: Container(
-                          child: const Padding(
-                            padding: EdgeInsets.fromLTRB(10, 3, 0, 0),
-                            child: Text(
-                              "Article",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          width: 200,
-                          height: 30,
-                          decoration: const ShapeDecoration(
-                            color: Color(0xFFB96CFF),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(13),
-                                bottomRight: Radius.circular(13),
-                              ),
-                            ),
-                            shadows: [
-                              BoxShadow(
-                                color: Color(0x3F000000),
-                                blurRadius: 4,
-                                offset: Offset(0, 4),
-                                spreadRadius: 0,
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 20.0),
+
+          // Article Card
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -139,13 +94,80 @@ class _DashboardState extends State<Dashboard> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Dashboard()),
+                    MaterialPageRoute(builder: (context) => const Article()),
+                  );
+                },
+                child: SizedBox(
+                  width: devWidth * 0.87,
+                  height: (devHeight * 0.4) / 2,
+                  child: Card(
+                    elevation: 6,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          top: 0,
+                          left: 0,
+                          child: Container(
+                            width: 200,
+                            height: 30,
+                            decoration: const ShapeDecoration(
+                              color: Color(0xFFB96CFF),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(13),
+                                  bottomRight: Radius.circular(13),
+                                ),
+                              ),
+                              shadows: [
+                                BoxShadow(
+                                  color: Color(0x3F000000),
+                                  blurRadius: 4,
+                                  offset: Offset(0, 4),
+                                  spreadRadius: 0,
+                                )
+                              ],
+                            ),
+                            child: const Padding(
+                              padding: EdgeInsets.fromLTRB(10, 3, 0, 0),
+                              child: Text(
+                                "Article",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 20.0),
+
+          //feedback Card
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const FeedbackScreen()),
                   );
                 },
                 child: Container(
                   width: devWidth * 0.87,
                   height: (devHeight * 0.4) / 2,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage('assets/feedback.png'))),
 
