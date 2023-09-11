@@ -59,9 +59,13 @@ class _DashboardState extends State<Dashboard> {
             ),
           ),
           const SizedBox(height: 30.0),
+
+          //Apoinment cards
+
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
+              //Medical Apoinment Card
               HomePageCardSmall(
                 devWidth: devWidth,
                 devHeight: devHeight,
@@ -69,6 +73,8 @@ class _DashboardState extends State<Dashboard> {
                 sizeboxWidth: 18,
                 imgUrl: 'assets/mreq.png',
               ),
+
+              //EC Appoinment Card
               HomePageCardSmall(
                 devWidth: devWidth,
                 devHeight: devHeight,
@@ -79,6 +85,8 @@ class _DashboardState extends State<Dashboard> {
             ],
           ),
           const SizedBox(height: 20.0),
+
+          // Article Card
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -86,10 +94,10 @@ class _DashboardState extends State<Dashboard> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Article()),
+                    MaterialPageRoute(builder: (context) => const Article()),
                   );
                 },
-                child: Container(
+                child: SizedBox(
                   width: devWidth * 0.87,
                   height: (devHeight * 0.4) / 2,
                   child: Card(
@@ -103,16 +111,6 @@ class _DashboardState extends State<Dashboard> {
                           top: 0,
                           left: 0,
                           child: Container(
-                            child: const Padding(
-                              padding: EdgeInsets.fromLTRB(10, 3, 0, 0),
-                              child: Text(
-                                "Article",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
                             width: 200,
                             height: 30,
                             decoration: const ShapeDecoration(
@@ -132,6 +130,16 @@ class _DashboardState extends State<Dashboard> {
                                 )
                               ],
                             ),
+                            child: const Padding(
+                              padding: EdgeInsets.fromLTRB(10, 3, 0, 0),
+                              child: Text(
+                                "Article",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
                           ),
                         ),
                       ],
@@ -142,6 +150,9 @@ class _DashboardState extends State<Dashboard> {
             ],
           ),
           const SizedBox(height: 20.0),
+
+          //feedback Card
+
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -149,13 +160,14 @@ class _DashboardState extends State<Dashboard> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => FeedbackScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => const FeedbackScreen()),
                   );
                 },
                 child: Container(
                   width: devWidth * 0.87,
                   height: (devHeight * 0.4) / 2,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage('assets/feedback.png'))),
 

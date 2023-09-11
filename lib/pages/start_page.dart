@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medix/pages/welcome_page.dart';
 
 class start extends StatelessWidget {
   const start({super.key});
@@ -98,9 +99,9 @@ class start extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const start()));
+                              builder: (context) => const WelcPage()));
                     },
-                    child: Container(
+                    child: SizedBox(
                       width: 160,
                       height: 48,
                       child: Stack(
