@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "420646789541",
+    "project_id": "nmedix-nsbm",
+    "storage_bucket": "nmedix-nsbm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420646789541:android:0cf95b19a4ec258473084c",
+        "android_client_info": {
+          "package_name": "com.example.medix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "420646789541-vpgs31n1h9gk9ag18s6ivq5d1fc97f9v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApefaqnfuhyDWkRzrym8xex1BkTmX5u8M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "420646789541-vpgs31n1h9gk9ag18s6ivq5d1fc97f9v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
