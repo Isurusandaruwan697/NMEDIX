@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medix/pages/dashboard_page.dart';
 
 class TearmsPage extends StatefulWidget {
   const TearmsPage({super.key});
@@ -183,7 +184,7 @@ class _TearmsPageState extends State<TearmsPage> {
                           builder: (context) => const TearmsPage()),
                     );
                   },
-                  child: Container(
+                  child: SizedBox(
                     width: 160,
                     height: 48,
                     child: Stack(
@@ -264,10 +265,11 @@ class _TearmsPageState extends State<TearmsPage> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => TearmsPage()),
+                      MaterialPageRoute(
+                          builder: (context) => const Dashboard()),
                     );
                   },
-                  child: Container(
+                  child: SizedBox(
                     width: 160,
                     height: 48,
                     child: Stack(
