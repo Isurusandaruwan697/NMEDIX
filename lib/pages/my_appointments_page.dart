@@ -322,7 +322,7 @@ class _MyAppointState extends State<MyAppoint> {
                                         left: 0,
                                         top: 0,
                                         child: Text(
-                                          'Medical Request',
+                                          'EC Request',
                                           style: TextStyle(
                                             color: Colors.white,
                                             fontSize: 16,
@@ -384,7 +384,7 @@ class _MyAppointState extends State<MyAppoint> {
                         left: 22,
                         top: 47,
                         child: Text(
-                          'Time: 09:00 AM',
+                          'Subject : Computer Networks',
                           style: TextStyle(
                             color: Color(0xFF333333),
                             fontSize: 12,
@@ -397,7 +397,7 @@ class _MyAppointState extends State<MyAppoint> {
                         left: 22,
                         top: 68,
                         child: Text(
-                          'Number: ',
+                          'Status: ',
                           style: TextStyle(
                             color: Color(0xFF333333),
                             fontSize: 12,
@@ -410,9 +410,9 @@ class _MyAppointState extends State<MyAppoint> {
                         left: 80,
                         top: 69,
                         child: Text(
-                          '15 ',
+                          'Reject ',
                           style: TextStyle(
-                            color: Color(0xFF333333),
+                            color: Color(0xFFF95656),
                             fontSize: 12,
                             fontFamily: 'Montserrat',
                             fontWeight: FontWeight.w400,
