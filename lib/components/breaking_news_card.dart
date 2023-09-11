@@ -17,7 +17,8 @@ class _BreakingNewsCardState extends State<BreakingNewsCard> {
         Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => DetailsScreen(widget.data),
+              // builder: (context) => DetailsScreen(widget.data),
+              builder: (context) => BreakingNewsCard(widget.data),
             ));
       },
       child: Container(
