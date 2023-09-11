@@ -49,7 +49,7 @@ class _WelcPageState extends State<WelcPage> {
                 Positioned(
                 left: width *0.08,
                 top: height *0.3,
-                child: SizedBox(
+                child: const SizedBox(
                   width: 250,
                   height: 70,
                   child: Text(
@@ -63,6 +63,55 @@ class _WelcPageState extends State<WelcPage> {
                   ),
                 ),
               ),
+                Positioned(
+                  left: 0,
+                  bottom: 0,
+                  child: Container(
+                          width: width*0.7,
+                          height: height*0.65,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage("doctor.png"),
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                        ),
+                ),
+
+                Positioned(
+                  left: width*0.15,
+                  top: height*0.45,
+                  child: Container(
+                    width: width*0.7,
+                    height: height*0.35,
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          left: 0,
+                          top: 0,
+                          child: Container(
+                            width: width*0.7,
+                            height: height*0.35,
+                            decoration: ShapeDecoration(
+                              color: Colors.white.withOpacity(0.7400000143051147),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20)
+                              ),
+                              shadows:const [
+                                BoxShadow(
+                                  color: Color(0xB2B96CFF),
+                                  blurRadius: 4,
+                                  offset: Offset(0, 0),
+                                  spreadRadius: 4,
+                                )
+                              ]
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                )
               ],
             ),
           ),
