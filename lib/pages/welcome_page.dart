@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medix/pages/login_page.dart';
 
 class WelcPage extends StatefulWidget {
   const WelcPage({super.key});
@@ -63,6 +64,182 @@ class _WelcPageState extends State<WelcPage> {
                     ),
                   ),
                 ),
+                Positioned(
+                  left: width * 0.08,
+                  top: height * 0.3,
+                  child: const SizedBox(
+                    width: 250,
+                    height: 70,
+                    child: Text(
+                      "Let's get you started on your health journey.\nFollow these steps to unlock a world \nof seamless healthcare:",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 12,
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  left: 0,
+                  bottom: 0,
+                  child: Container(
+                    width: width * 0.7,
+                    height: height * 0.65,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("doctor.png"),
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  left: width * 0.14,
+                  top: height * 0.45,
+                  child: Container(
+                    width: width * 0.72,
+                    height: height * 0.3,
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          left: 0,
+                          top: 0,
+                          child: Container(
+                            width: width * 0.72,
+                            height: height * 0.3,
+                            decoration: ShapeDecoration(
+                                color: Colors.white
+                                    .withOpacity(0.7400000143051147),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20)),
+                                shadows: const [
+                                  BoxShadow(
+                                    color: Color(0xB2B96CFF),
+                                    blurRadius: 4,
+                                    offset: Offset(0, 0),
+                                    spreadRadius: 4,
+                                  )
+                                ]),
+                          ),
+                        ),
+                        Positioned(
+                          left: 0,
+                          top: 35,
+                          child: Container(
+                            width: 250,
+                            height: 165,
+                            child: const Stack(
+                              children: [
+                                Positioned(
+                                  left: 8,
+                                  top: 54,
+                                  child: Text(
+                                    "Step 2: Schedule  appointments with just a \nfew taps. our health, your way.",
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 12,
+                                      fontFamily: 'Montserrat',
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ),
+                                Positioned(
+                                  left: 8,
+                                  top: 0,
+                                  child: Text(
+                                    "Step 1: Log  in to  your account  using  your \nusername and set a password. It's your key to \nbetter care!",
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 12,
+                                      fontFamily: 'Montserrat',
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ),
+                                Positioned(
+                                  left: 8,
+                                  top: 110,
+                                  child: Text(
+                                    "Step 3: Discover our innovative features for\neffortless  appointment booking and more...",
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 12,
+                                      fontFamily: 'Montserrat',
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginPage()),
+                    );
+                  },
+                  child: Positioned(
+                    left: width * 0.5,
+                    bottom: height * 0.06,
+                    child: Container(
+                        width: width * 0.4,
+                        height: 48,
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              left: 0,
+                              top: 0,
+                              child: Container(
+                                width: width * 0.4,
+                                height: 48,
+                                decoration: ShapeDecoration(
+                                    gradient: const LinearGradient(
+                                      begin: Alignment(0.00, -1.00),
+                                      end: Alignment(0, 1),
+                                      colors: [
+                                        Color(0xFF742BBA),
+                                        Color(0xFFB96CFF)
+                                      ],
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    shadows: const [
+                                      BoxShadow(
+                                        color: Color(0x54000000),
+                                        blurRadius: 4,
+                                        offset: Offset(0, 0),
+                                        spreadRadius: 4,
+                                      )
+                                    ]),
+                              ),
+                            ),
+                            const Positioned(
+                              left: 42,
+                              top: 14,
+                              child: Text(
+                                'Continue',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            )
+                          ],
+                        )),
+                  ),
+                )
               ],
             ),
           ),
