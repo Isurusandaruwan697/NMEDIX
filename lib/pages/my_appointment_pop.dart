@@ -153,7 +153,7 @@ class _MyAppointPopState extends State<MyAppointPop> {
                                       ),
                                       Positioned(
                                         left: width * 0.55,
-                                        top: 0,
+                                        top: height*0.005,
                                         child: Container(
                                           width: width * 0.14,
                                           height: height *0.03,
@@ -174,9 +174,9 @@ class _MyAppointPopState extends State<MyAppointPop> {
                                                   ),
                                                 ),
                                               ),
-                                              const Positioned(
-                                                left: 12,
-                                                top: 3.5,
+                                              Positioned(
+                                                left: width*0.035,
+                                                top: height*0.005,
                                                 child: Text(
                                                   '07/10',
                                                   style: TextStyle(
@@ -332,7 +332,7 @@ class _MyAppointPopState extends State<MyAppointPop> {
                                       ),
                                       Positioned(
                                         left: width * 0.55,
-                                        top: 0,
+                                        top: height*0.005,
                                         child: Container(
                                           width: width * 0.14,
                                           height: height *0.03,
@@ -353,9 +353,9 @@ class _MyAppointPopState extends State<MyAppointPop> {
                                                   ),
                                                 ),
                                               ),
-                                              const Positioned(
-                                                left: 12,
-                                                top: 3.5,
+                                              Positioned(
+                                                left: width*0.035,
+                                                top: height*0.005,
                                                 child: Text(
                                                   '07/10',
                                                   style: TextStyle(
@@ -419,6 +419,168 @@ class _MyAppointPopState extends State<MyAppointPop> {
                         ),
                       ),
 
+                    ],
+                  ),
+                ),
+              ),
+
+
+              Positioned(
+                left: width*0.1,
+                top: height*0.67,
+                child: Container(
+                  width: width*0.8,
+                  height: height*0.3,
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        left: 0,
+                        top: 0,
+                        child: Container(
+                          width: width*0.8,
+                          height: height*0.3,
+                          decoration: ShapeDecoration(
+                            color: Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                              
+                            ),
+                            shadows: const [
+                              BoxShadow(
+                                color: Color(0xFFB96CFF),
+                                blurRadius: 4,
+                                offset: Offset(0, 0),
+                                spreadRadius: 2,
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        left: width*0.3,
+                        top: height*0.02,
+                        child: const Text(
+                          'EC Request',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+
+
+                      Positioned(
+                        left: width*0.058,
+                        top: height*0.23,
+                        child: Container(
+                          width: width*0.3,
+                          height: height*0.05,
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                left: width*0,
+                                top: height*0,
+                                child: Container(
+                                  width: width*0.3,
+                                  height: height*0.05,
+                                  decoration: ShapeDecoration(
+                                    color: Colors.white,
+                                    shape: RoundedRectangleBorder(
+                                      side: BorderSide(width: 0.50, color: Color(0xFF742BBA)),
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    shadows: const [
+                                      BoxShadow(
+                                        color: Color(0x54000000),
+                                        blurRadius: 13,
+                                        offset: Offset(0, 0),
+                                        spreadRadius: 2,
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: width*0.055,
+                                top: height*0.01,
+                                child: SizedBox(
+                                  width: width*0.2,
+                                  height: height*0.03,
+                                  child: const Text(
+                                    'Reshedule',
+                                    style: TextStyle(
+                                      color: Color(0xFF742BBA),
+                                      fontSize: 16,
+                                      fontFamily: 'Montserrat',
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+
+
+                      Positioned(
+                        left: width*0.45,
+                        top: height*0.23,
+                        child: Container(
+                          width: width*0.3,
+                          height: height*0.05,
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                left: 0,
+                                top: 0,
+                                child: Container(
+                                  width: width*0.3,
+                                  height: height*0.05,
+                                  decoration: ShapeDecoration(
+                                    gradient: const LinearGradient(
+                                      begin: Alignment(0.00, -1.00),
+                                      end: Alignment(0, 1),
+                                      colors: [Color(0xFF742BBA), Color(0xFFB96CFF)],
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    shadows: const [
+                                      BoxShadow(
+                                        color: Color(0x54000000),
+                                        blurRadius: 13,
+                                        offset: Offset(0, 0),
+                                        spreadRadius: 2,
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: width*0.08,
+                                top: height*0.01,
+                                child: SizedBox(
+                                  width: width*0.2,
+                                  height: height*0.03,
+                                  child: const Text(
+                                    'Cancel',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontFamily: 'Montserrat',
+                                      fontWeight: FontWeight.w400,
+                                      height: 0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
