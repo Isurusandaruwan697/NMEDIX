@@ -20,6 +20,7 @@ class _MyAppointPopState extends State<MyAppointPop> {
             height: MediaQuery.of(context).size.height,
             child:  Stack(
               children: [
+                //My appointments
                 Positioned(
                 left: 0,
                 top: -17,
@@ -65,7 +66,7 @@ class _MyAppointPopState extends State<MyAppointPop> {
                   ),
                 ),
               ),
-
+              //Medical request
               Positioned(
                 left: width * 0.10,
                 top: height * 0.50,
@@ -177,7 +178,7 @@ class _MyAppointPopState extends State<MyAppointPop> {
                                               Positioned(
                                                 left: width*0.035,
                                                 top: height*0.005,
-                                                child: Text(
+                                                child: const Text(
                                                   '07/10',
                                                   style: TextStyle(
                                                     color: Color(0xFF7A30C0),
@@ -276,6 +277,8 @@ class _MyAppointPopState extends State<MyAppointPop> {
                           ),
                         ),
                       ),
+
+                      //EC request
                       Positioned(
                         left: 0,
                         top: 0,
@@ -356,7 +359,7 @@ class _MyAppointPopState extends State<MyAppointPop> {
                                               Positioned(
                                                 left: width*0.035,
                                                 top: height*0.005,
-                                                child: Text(
+                                                child: const Text(
                                                   '07/10',
                                                   style: TextStyle(
                                                     color: Color(0xFF7A30C0),
@@ -424,7 +427,7 @@ class _MyAppointPopState extends State<MyAppointPop> {
                 ),
               ),
 
-
+              //pop up
               Positioned(
                 left: width*0.1,
                 top: height*0.67,
@@ -502,6 +505,8 @@ class _MyAppointPopState extends State<MyAppointPop> {
                                   ),
                                 ),
                               ),
+
+                              // reshedule button
                               Positioned(
                                 left: width*0.055,
                                 top: height*0.01,
@@ -524,7 +529,7 @@ class _MyAppointPopState extends State<MyAppointPop> {
                         ),
                       ),
 
-
+                      //cancel button
                       Positioned(
                         left: width*0.45,
                         top: height*0.23,
@@ -574,6 +579,234 @@ class _MyAppointPopState extends State<MyAppointPop> {
                                       fontWeight: FontWeight.w400,
                                       height: 0,
                                     ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+
+                      //details
+
+                      Positioned(
+                        left: width*0.08,
+                        top: height*0.07,
+                        child: Container(
+                          width: 175,
+                          height: 17,
+                          child: const Stack(
+                            children: [
+                              Positioned(
+                                left: 0,
+                                top: 0,
+                                child: Text(
+                                  'Appointment ID',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: 140,
+                                top: 0,
+                                child: Text(
+                                  '0025',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: 125,
+                                top: 0,
+                                child: Text(
+                                  ':',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+
+
+
+                      Positioned(
+                        left: width*0.08,
+                        top: height*0.1,
+                        child: Container(
+                          width: 214,
+                          height: 17,
+                          child: const Stack(
+                            children: [
+                              Positioned(
+                                left: 0,
+                                top: 0,
+                                child: Text(
+                                  'Time',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: 140,
+                                top: 0,
+                                child: Text(
+                                  '09 : 00 AM',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: 125,
+                                top: 0,
+                                child: Text(
+                                  ':',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+
+
+
+                      Positioned(
+                        left: width*0.08,
+                        top: height*0.13,
+                        child: Container(
+                          width: 214,
+                          height: 17,
+                          child: const Stack(
+                            children: [
+                              Positioned(
+                                left: 0,
+                                top: 0,
+                                child: Text(
+                                  'Date',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: 140,
+                                top: 0,
+                                child: Text(
+                                  '2023/07/10',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: 125,
+                                top: 0,
+                                child: Text(
+                                  ':',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+
+
+
+                      Positioned(
+                        left: width*0.08,
+                        top: height*0.16,
+                        child: Container(
+                          width: 179,
+                          height: 17,
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                left: 0,
+                                top: 0,
+                                child: Text(
+                                  'Status',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: 140,
+                                top: 2,
+                                child: Text(
+                                  'Reject',
+                                  style: TextStyle(
+                                    color: Color(0xFFF95656),
+                                    fontSize: 12,
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: 125,
+                                top: 0,
+                                child: Text(
+                                  ':',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
                                   ),
                                 ),
                               ),
