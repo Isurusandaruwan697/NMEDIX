@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:medix/pages/tearms_page.dart';
 
@@ -9,15 +10,40 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  // final _formKey = GlobalKey<FormState>();
+
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  @override
-  void dispose() {
-    usernameController.dispose();
-    passwordController.dispose();
-    super.dispose();
+  void signIn() async {
+    // try {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: usernameController.text,
+      password: passwordController.text,
+    );
+    // } on FirebaseAuthException catch (e) {
+    //   if (e.code == 'user-not-found') {
+    //     return ScaffoldMessenger.of(context).showSnackBar(
+    //       SnackBar(
+    //         content: Text('No user found for that Username.'),
+    //       ),
+    //     );
+    //   } else if (e.code == 'wrong-password') {
+    //     return ScaffoldMessenger.of(context).showSnackBar(
+    //       SnackBar(
+    //         content: Text('Wrong password provided for that user.'),
+    //       ),
+    //     );
+    //   }
+    // }
   }
+
+  // @override
+  // void dispose() {
+  //   usernameController.dispose();
+  //   passwordController.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -119,7 +145,13 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ],
                         ),
-                        child: TextField(
+                        child: TextFormField(
+                          // validator: (text) {
+                          //   if (text == null || text.isEmpty) {
+                          //     return 'Username is empty';
+                          //   }
+                          //   return null;
+                          // },
                           controller: usernameController,
                           decoration: const InputDecoration(
                             hintText: '     Enter Your Username',
@@ -180,7 +212,13 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ],
                         ),
-                        child: TextField(
+                        child: TextFormField(
+                          // validator: (text) {
+                          //   if (text == null || text.isEmpty) {
+                          //     return 'Password is empty';
+                          //   }
+                          //   return null;
+                          // },
                           controller: passwordController,
                           obscureText: !passwordVisible,
                           decoration: InputDecoration(
@@ -220,10 +258,16 @@ class _LoginPageState extends State<LoginPage> {
               top: devHeight * 0.88,
               child: GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const TearmsPage()),
-                  );
+                  // if (_formKey.currentState!.validate()) {
+                  //   print("Validation is done");
+                  // }
+
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(builder: (context) => const TearmsPage()),
+                  // );
+
+                  signIn();
                 },
                 child: SizedBox(
                   width: 160,
