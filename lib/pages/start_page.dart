@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medix/authentication/auth_page.dart';
 import 'package:medix/pages/welcome_page.dart';
 
 class start extends StatelessWidget {
@@ -99,7 +100,7 @@ class start extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const WelcPage()));
+                              builder: (context) => const AuthPage()));
                     },
                     child: SizedBox(
                       width: 160,

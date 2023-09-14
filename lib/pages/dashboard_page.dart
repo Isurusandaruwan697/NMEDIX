@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:medix/pages/article_page.dart';
 import 'package:medix/pages/feedback_page.dart';
@@ -11,6 +12,11 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+//just for test
+  void logout() async {
+    await FirebaseAuth.instance.signOut();
+  }
+
   @override
   Widget build(BuildContext context) {
     double devHeight = MediaQuery.of(context).size.height;
@@ -43,7 +49,9 @@ class _DashboardState extends State<Dashboard> {
                   right: 10,
                   child: IconButton(
                     color: Colors.white,
-                    onPressed: () {},
+                    onPressed: () {
+                      logout();
+                    },
                     icon: const Icon(Icons.menu),
                   ),
                 ),
