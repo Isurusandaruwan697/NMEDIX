@@ -81,5 +81,36 @@ class NewsData {
     //     "The class-action lawsuit alleges that Cuban's promotion of now-bankrupt crypto firm Voyager cost investors \$5 billion",
     //     "2022-08-11",
     //     "https://techcrunch.com/wp-content/uploads/2016/02/54816c7904ab43c9af6a09d12d936b0e.jpg?w=600"),
+
+    NewsData(
+        "The science behind lifestyle's role in preventing depression.",
+        "By Dr. Liji Thomas",
+        "Given the rising rates of depression, a recent paper in Nature Mental Health looks at the effect of a range of lifestyle factors in relation to the brain structure, immune function metabolic pathways and genetic mechanisms, that are responsible for depression.",
+        "Sep 13 2023",
+        "https://th.bing.com/th/id/OIP.5I7vTA_4PWK1M_VFhCE7ngHaDt?w=300&h=175&c=7&r=0&o=5&dpr=1.1&pid=1.7"),
+    NewsData(
+        "What is Incontinentia Pigmenti?",
+        "By Schwieger-Briel A",
+        "   Incontinentia pigmenti (IP) is a rare multisystemic condition with characteristic skin lesions. Also known as Bloch-Sulzberger syndrome,it affects different sites of the body, including the skin, eyes, hair, teeth, nails, and central nervous system.",
+        "Sep 12, 2023",
+        "https://img.medscape.com/thumbnail_library/885128.jpg"),
+    NewsData(
+        "Machine learning shows promise for coronary artery disease risk assessment",
+        "By Pooja Toshniwal Paharia",
+        "In a recent study published in Scientific Reports, researchers investigated the performance of a machine learning (ML)-based model in evaluating radiomic features to diagnosecoronary artery disease (CAD) and its susceptibility using myocardial perfusion imaging (MPI) single-photon emission computed tomography (SPECT) images.",
+        "Sep 13 2023",
+        "https://d2jx2rerrg6sh3.cloudfront.net/images/news/ImageForNews_758854_1694613754995897.jpg"),
+    NewsData(
+        "Using biological safety cabinets for microbiology research",
+        "by Monmouth Scientific",
+        "The University of Birmingham's Surgical Reconstruction and Microbiology Research Centre serves as a national hub for trauma research, applying insights gained from militaryexperiences to enhance medical outcomes for all patients.",
+        "Sep 12,2023",
+        "https://newsroom.unsw.edu.au/sites/default/files/thumbnails/image/shutterstock_lower_res_4.jpg"),
+    NewsData(
+        "What Does the Future of Liquid Biopsies Look Like?",
+        "By Maira Ahsan",
+        "Despite multiple studies indicating the potential of liquid biopsies to fulfill current demands in cancer care, their usefulness remains debatable. In a recent study, the performance of two commercially available NGS-based ctDNA assays for metastatic prostate cancer was compared.",
+        "Sep 12 2023",
+        "https://d2jx2rerrg6sh3.cloudfront.net/images/Article_Images/ImageForArticle_23857_16945345609962776.jpg"),
   ];
 }
