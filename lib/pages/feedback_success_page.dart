@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medix/authentication/auth_page.dart';
 
 import 'dashboard_page.dart';
 
@@ -40,10 +41,7 @@ class Successfull extends StatelessWidget {
             const SizedBox(height: 80),
             GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Dashboard()),
-                );
+                Navigator.pop(context);
               },
               child: Container(
                 width: 160,

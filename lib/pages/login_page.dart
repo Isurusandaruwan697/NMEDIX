@@ -1,9 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:medix/auth/auth_service.dart';
+import 'package:medix/pages/dashboard_page.dart';
 import 'package:medix/pages/tearms_page.dart';
+import 'package:medix/screens/tsetscreen.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  const LoginPage({
+    super.key,
+  });
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -15,28 +20,30 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  void signIn() async {
-    // try {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: usernameController.text,
-      password: passwordController.text,
-    );
-    // } on FirebaseAuthException catch (e) {
-    //   if (e.code == 'user-not-found') {
-    //     return ScaffoldMessenger.of(context).showSnackBar(
-    //       SnackBar(
-    //         content: Text('No user found for that Username.'),
-    //       ),
-    //     );
-    //   } else if (e.code == 'wrong-password') {
-    //     return ScaffoldMessenger.of(context).showSnackBar(
-    //       SnackBar(
-    //         content: Text('Wrong password provided for that user.'),
-    //       ),
-    //     );
-    //   }
-    // }
-  }
+  final AuthService _authService = AuthService();
+
+  // void signIn() async {
+  //   // try {
+  //   await FirebaseAuth.instance.signInWithEmailAndPassword(
+  //     email: usernameController.text,
+  //     password: passwordController.text,
+  //   );
+  //   // } on FirebaseAuthException catch (e) {
+  //   //   if (e.code == 'user-not-found') {
+  //   //     return ScaffoldMessenger.of(context).showSnackBar(
+  //   //       SnackBar(
+  //   //         content: Text('No user found for that Username.'),
+  //   //       ),
+  //   //     );
+  //   //   } else if (e.code == 'wrong-password') {
+  //   //     return ScaffoldMessenger.of(context).showSnackBar(
+  //   //       SnackBar(
+  //   //         content: Text('Wrong password provided for that user.'),
+  //   //       ),
+  //   //     );
+  //   //   }
+  //   // }
+  // }
 
   // @override
   // void dispose() {
@@ -257,7 +264,7 @@ class _LoginPageState extends State<LoginPage> {
               left: devWidth * 0.5 - 80,
               top: devHeight * 0.88,
               child: GestureDetector(
-                onTap: () {
+                onTap: () async {
                   // if (_formKey.currentState!.validate()) {
                   //   print("Validation is done");
                   // }
@@ -267,7 +274,22 @@ class _LoginPageState extends State<LoginPage> {
                   //   MaterialPageRoute(builder: (context) => const TearmsPage()),
                   // );
 
-                  signIn();
+                  // signIn();
+
+                  // AuthService().signInWithEmailAndPassword(
+                  //   usernameController.text,
+                  //   passwordController.text,
+                  // );
+                  User? user = await _authService.signInWithEmailAndPassword(
+                      usernameController.text, passwordController.text);
+                  if (user != null) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Dashboard(user: user),
+                      ),
+                    );
+                  }
                 },
                 child: SizedBox(
                   width: 160,

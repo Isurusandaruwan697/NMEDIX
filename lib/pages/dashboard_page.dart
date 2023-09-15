@@ -1,11 +1,17 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:medix/auth/auth_service.dart';
 import 'package:medix/pages/article_page.dart';
+import 'package:medix/pages/ec_approval_page.dart';
 import 'package:medix/pages/feedback_page.dart';
+import 'package:medix/pages/medicalappro_screen.dart';
 import 'package:medix/widgets/homepage_card_small.dart';
 
 class Dashboard extends StatefulWidget {
-  const Dashboard({super.key});
+  // const Dashboard({super.key});
+
+  final User user;
+  Dashboard({required this.user});
 
   @override
   State<Dashboard> createState() => _DashboardState();
@@ -13,12 +19,14 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
 //just for test
-  void logout() async {
-    await FirebaseAuth.instance.signOut();
-  }
+  // void logout() async {
+  //   await FirebaseAuth.instance.signOut();
+  // }
 
   @override
   Widget build(BuildContext context) {
+    final user = widget.user;
+
     double devHeight = MediaQuery.of(context).size.height;
     double devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -50,7 +58,7 @@ class _DashboardState extends State<Dashboard> {
                   child: IconButton(
                     color: Colors.white,
                     onPressed: () {
-                      logout();
+                      AuthService().signOut();
                     },
                     icon: const Icon(Icons.menu),
                   ),
@@ -74,21 +82,37 @@ class _DashboardState extends State<Dashboard> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               //Medical Apoinment Card
-              HomePageCardSmall(
-                devWidth: devWidth,
-                devHeight: devHeight,
-                title: "Medical\nRequest",
-                sizeboxWidth: 18,
-                imgUrl: 'assets/mreq.png',
+              GestureDetector(
+                child: HomePageCardSmall(
+                  devWidth: devWidth,
+                  devHeight: devHeight,
+                  title: "Medical\nRequest",
+                  sizeboxWidth: 18,
+                  imgUrl: 'assets/mreq.png',
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MedicalApproval()),
+                  );
+                },
               ),
 
               //EC Appoinment Card
-              HomePageCardSmall(
-                devWidth: devWidth,
-                devHeight: devHeight,
-                title: "EC Approval\nRequest",
-                sizeboxWidth: 12,
-                imgUrl: 'assets/ecreq.png',
+              GestureDetector(
+                child: HomePageCardSmall(
+                  devWidth: devWidth,
+                  devHeight: devHeight,
+                  title: "EC Approval\nRequest",
+                  sizeboxWidth: 12,
+                  imgUrl: 'assets/ecreq.png',
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => EcApproval()),
+                  );
+                },
               )
             ],
           ),
@@ -243,6 +267,8 @@ class _DashboardState extends State<Dashboard> {
               ),
             ),
           ),
+
+          Text('Hello, ${user.email}!'),
         ],
       ),
     );
