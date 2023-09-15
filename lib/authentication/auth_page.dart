@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:medix/pages/dashboard_page.dart';
 import 'package:medix/pages/login_page.dart';
+import 'package:medix/screens/tsetscreen.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({super.key});
@@ -23,9 +24,9 @@ class _AuthPageState extends State<AuthPage> {
               child: CircularProgressIndicator(),
             );
           } else if (snapshot.hasData) {
-            return const Dashboard();
+            return AuthPage();
           } else {
-            return const LoginPage();
+            return LoginPage();
           }
         },
       ),

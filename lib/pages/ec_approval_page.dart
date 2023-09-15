@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:medix/pages/dashboard_page.dart';
 import 'package:medix/widgets/date_picker_card.dart';
@@ -15,6 +16,9 @@ class _EcApprovalState extends State<EcApproval> {
   TextEditingController ECIdController = TextEditingController();
   TextEditingController ECSubjectController = TextEditingController();
   TextEditingController ECFacultyController = TextEditingController();
+
+  CollectionReference ecApproval =
+      FirebaseFirestore.instance.collection('ecApproval');
 
   @override
   Widget build(BuildContext context) {
@@ -67,10 +71,7 @@ class _EcApprovalState extends State<EcApproval> {
               top: 20,
               child: IconButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Dashboard()),
-                  );
+                  Navigator.pop(context);
                 },
                 icon: Icon(
                   Icons.arrow_back_ios,
@@ -145,6 +146,7 @@ class _EcApprovalState extends State<EcApproval> {
                                   ],
                                 ),
                                 child: TextField(
+                                  controller: ECNameController,
                                   decoration: InputDecoration(
                                     hintText: '     Enter Your Name',
                                     hintStyle: TextStyle(
@@ -263,6 +265,7 @@ class _EcApprovalState extends State<EcApproval> {
                                   ],
                                 ),
                                 child: TextField(
+                                  controller: ECIdController,
                                   decoration: InputDecoration(
                                     hintText: '     Enter Your Index',
                                     hintStyle: TextStyle(
@@ -322,6 +325,7 @@ class _EcApprovalState extends State<EcApproval> {
                                   ],
                                 ),
                                 child: TextField(
+                                  controller: ECSubjectController,
                                   decoration: InputDecoration(
                                     hintText: '     Enter Subject Name',
                                     hintStyle: TextStyle(
@@ -381,6 +385,7 @@ class _EcApprovalState extends State<EcApproval> {
                                   ],
                                 ),
                                 child: TextField(
+                                  controller: ECFacultyController,
                                   decoration: InputDecoration(
                                     hintText: '     Enter Your Faculty',
                                     hintStyle: TextStyle(
@@ -481,10 +486,20 @@ class _EcApprovalState extends State<EcApproval> {
               top: devHeight / 7 * 5.1 + 128 + 20,
               child: GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Dashboard()),
-                  );
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(builder: (context) => EcApproval()),
+                  // );
+                  ecApproval
+                      .add({
+                        'name': ECNameController.text,
+                        'batch': ECBatchController.text,
+                        'index': ECIdController.text,
+                        'subject': ECSubjectController.text,
+                        'faculty': ECFacultyController.text,
+                      })
+                      .then((value) => print("EC added"))
+                      .catchError((error) => print("Failed to add EC: $error"));
                 },
                 child: Container(
                   width: 160,

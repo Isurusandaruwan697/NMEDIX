@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:medix/widgets/date_picker_card.dart';
 import 'package:medix/widgets/time_picker_card.dart';
@@ -6,13 +8,21 @@ import 'dashboard_page.dart';
 // import 'package:nmedix/widgets/time_picker_card.dart';
 
 class MedicalApproval extends StatefulWidget {
-  const MedicalApproval({super.key});
+  // const MedicalApproval({super.key});
 
   @override
   State<MedicalApproval> createState() => _MedicalApprovalState();
 }
 
 class _MedicalApprovalState extends State<MedicalApproval> {
+  TextEditingController MediNameController = TextEditingController();
+  TextEditingController MediIndexController = TextEditingController();
+  TextEditingController MediPerceptionController = TextEditingController();
+  TextEditingController MediStatusController = TextEditingController();
+
+  CollectionReference mediAppoinment =
+      FirebaseFirestore.instance.collection('mediAppoinment');
+
   @override
   Widget build(BuildContext context) {
     final devHeight = MediaQuery.of(context).size.height;
@@ -64,10 +74,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
               top: 20,
               child: IconButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Dashboard()),
-                  );
+                  Navigator.pop(context);
                 },
                 icon: Icon(
                   Icons.arrow_back_ios,
@@ -143,6 +150,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                                   ],
                                 ),
                                 child: TextField(
+                                  controller: MediNameController,
                                   decoration: InputDecoration(
                                     hintText: '     Enter Your Name',
                                     hintStyle: TextStyle(
@@ -160,7 +168,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                         ),
                       ),
                     ),
-                                    //Index textfield section
+                    //Index textfield section
 
                     Positioned(
                       left: 20,
@@ -204,6 +212,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                                   ],
                                 ),
                                 child: TextField(
+                                  controller: MediIndexController,
                                   decoration: InputDecoration(
                                     hintText: '     Enter Your Index',
                                     hintStyle: TextStyle(
@@ -221,7 +230,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                         ),
                       ),
                     ),
-                                    //Perception number textfield section
+                    //Perception number textfield section
 
                     Positioned(
                       left: 20,
@@ -265,6 +274,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                                   ],
                                 ),
                                 child: TextField(
+                                  controller: MediPerceptionController,
                                   decoration: InputDecoration(
                                     hintText:
                                         '     Enter Your Perception Number',
@@ -319,8 +329,8 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                         child: ListView(
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
-                          padding:  EdgeInsets.symmetric(
-                              horizontal: 7, vertical: 10),
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 7, vertical: 10),
                           children: [
                             DatePickerCard(datetext: '01\nsep'),
                             DatePickerCard(datetext: '02\nsep'),
@@ -359,8 +369,8 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                         child: ListView(
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
-                          padding:  EdgeInsets.symmetric(
-                              horizontal: 7, vertical: 10),
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 7, vertical: 10),
                           children: [
                             TimePickerCard(),
                           ],
@@ -371,7 +381,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                       left: 20,
                       top: 405,
                       child: Text(
-                        'Faculty',
+                        'Status',
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
@@ -409,8 +419,9 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                                   ],
                                 ),
                                 child: TextField(
+                                  controller: MediStatusController,
                                   decoration: InputDecoration(
-                                    hintText: '     Enter Your Faculty',
+                                    hintText: '     Tell about your illness',
                                     hintStyle: TextStyle(
                                       color: Color(0xFFC4C4C4),
                                       fontSize: 13,
@@ -437,10 +448,20 @@ class _MedicalApprovalState extends State<MedicalApproval> {
               top: devHeight / 7 * 5.1 + 128 + 20,
               child: GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Dashboard()),
-                  );
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(builder: (context) => MedicalApproval()),
+                  // );
+                  mediAppoinment
+                      .add({
+                        'MediName': MediNameController.text,
+                        'MediIndex': MediIndexController.text,
+                        'MediPerception': MediPerceptionController.text,
+                        'MediStatus': MediStatusController.text,
+                      })
+                      .then((value) => print("MediAppoinment added"))
+                      .catchError((error) =>
+                          print("Failed to add MediAppoinment: $error"));
                 },
                 child: Container(
                   width: 160,
