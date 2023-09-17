@@ -85,13 +85,13 @@ class NewsData {
     NewsData(
         "The science behind lifestyle's role in preventing depression.",
         "By Dr. Liji Thomas",
-        "Given the rising rates of depression, a recent paper in Nature Mental Health looks at the effect of a range of lifestyle factors in relation to the brain structure, immune function metabolic pathways and genetic mechanisms, that are responsible for depression.",
+        "Given the rising rates of depression, a recent paper in Nature Mental Health looks at the effect of a range of lifestyle factors in relation to the brain structure, immune function metabolic pathways and genetic mechanisms, that are responsible for depression.According to the World Health Organization, around one in 20 adults experiences depression, and the condition poses a significant burden on public health worldwide. The factors that influence the onset of depression are complicated and include a mixture of biological and lifestyle factors.To better understand the relationship between these factors and depression, the researchers turned to the UK Biobank, a biomedical database and research resource containing anonymized genetic, lifestyle, and health information about its participants.",
         "Sep 13 2023",
         "https://th.bing.com/th/id/OIP.5I7vTA_4PWK1M_VFhCE7ngHaDt?w=300&h=175&c=7&r=0&o=5&dpr=1.1&pid=1.7"),
     NewsData(
         "What is Incontinentia Pigmenti?",
         "By Schwieger-Briel A",
-        "   Incontinentia pigmenti (IP) is a rare multisystemic condition with characteristic skin lesions. Also known as Bloch-Sulzberger syndrome,it affects different sites of the body, including the skin, eyes, hair, teeth, nails, and central nervous system.",
+        "Incontinentia pigmenti (IP) is a rare multisystemic condition with characteristic skin lesions. Also known as Bloch-Sulzberger syndrome,it affects different sites of the body, including the skin, eyes, hair, teeth, nails, and central nervous system.The existence of neurological and/or visual impairment influences the severity of the disease. IP is an X-linked dominant disorder that primarily develops at birth or during early childhood.Incontinentia pigmenti can develop due to mutations in the IKBKG or the NEMO gene. It mostly affects women; however, there have been accounts of males being affected as well.Skin lesions, ocular abnormalities, abnormalities of the central nervous system, and dental deformities are characteristic clinical manifestations of incontinentia pigmenti. The main feature is that the skin lesions begin as vesiculobullous lesions and proceed through four phases to whorl-like pigmentary lesions.",
         "Sep 12, 2023",
         "https://img.medscape.com/thumbnail_library/885128.jpg"),
     NewsData(
@@ -103,13 +103,13 @@ class NewsData {
     NewsData(
         "Using biological safety cabinets for microbiology research",
         "by Monmouth Scientific",
-        "The University of Birmingham's Surgical Reconstruction and Microbiology Research Centre serves as a national hub for trauma research, applying insights gained from militaryexperiences to enhance medical outcomes for all patients.",
+        "The University of Birmingham's Surgical Reconstruction and Microbiology Research Centre serves as a national hub for trauma research, applying insights gained from militaryexperiences to enhance medical outcomes for all patientsThis study gathers saliva and urine samples from injured Premier League players and uninjured control players. Club doctors will collect these samples immediately after matches and at subsequent intervals during a players recovery. ",
         "Sep 12,2023",
         "https://newsroom.unsw.edu.au/sites/default/files/thumbnails/image/shutterstock_lower_res_4.jpg"),
     NewsData(
         "What Does the Future of Liquid Biopsies Look Like?",
         "By Maira Ahsan",
-        "Despite multiple studies indicating the potential of liquid biopsies to fulfill current demands in cancer care, their usefulness remains debatable. In a recent study, the performance of two commercially available NGS-based ctDNA assays for metastatic prostate cancer was compared.",
+        "Despite multiple studies indicating the potential of liquid biopsies to fulfill current demands in cancer care, their usefulness remains debatable. In a recent study, the performance of two commercially available NGS-based ctDNA assays for metastatic prostate cancer was compared.Liquid biopsy, or the evaluation of malignancies using biomarkers found in bodily fluids, has gained popularity in recent years. Technologies that can detect and describe cancers in minimally invasive and repeatable ways have made significant progress and may have important therapeutic implications.However, the two most well-developed liquid biopsy biomarkers, circulating tumor cells (CTCs) and circulating cell-free tumor DNA (ctDNA), are subject to technical variance both pre-analytically and post-analytically.Researchers must now focus on establishing the efficacy of these biomarkers to overcome these obstacles and increase the number of practitioners using liquid biopsy, as one of oncology's main goals is to create early detection tools. This article will explore the significance and prospects of liquid biopsy.",
         "Sep 12 2023",
         "https://d2jx2rerrg6sh3.cloudfront.net/images/Article_Images/ImageForArticle_23857_16945345609962776.jpg"),
   ];
