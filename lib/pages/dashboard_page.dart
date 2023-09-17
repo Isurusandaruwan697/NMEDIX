@@ -37,12 +37,10 @@ class _DashboardState extends State<Dashboard> {
             width: double.infinity,
             decoration: const ShapeDecoration(
               gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Color.fromARGB(225, 116, 43, 186),
-                    Color.fromARGB(200, 185, 108, 255)
-                  ]),
+                begin: Alignment(0.00, -1.00),
+                end: Alignment(0.00, 1.00),
+                colors: [Color(0xFF742BBA), Color.fromARGB(255, 193, 127, 255)],
+              ),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(35),
@@ -248,22 +246,87 @@ class _DashboardState extends State<Dashboard> {
             ],
           ),
           const SizedBox(height: 20.0),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              elevation: 6,
-              minimumSize: const Size(330, 60),
-              backgroundColor: const Color(0xFFB96CFF),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15.0),
-              ),
-            ),
-            onPressed: () {},
-            child: const Text(
-              "View Appoinment",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
+          // ElevatedButton(
+          //   style: ElevatedButton.styleFrom(
+          //     elevation: 6,
+          //     minimumSize: const Size(330, 60),
+          //     backgroundColor: const Color(0xFFB96CFF),
+          //     shape: RoundedRectangleBorder(
+          //       borderRadius: BorderRadius.circular(15.0),
+          //     ),
+          //   ),
+          //   onPressed: () {},
+          //   child: const Text(
+          //     "View Appoinment",
+          //     style: TextStyle(
+          //       fontSize: 20,
+          //       fontWeight: FontWeight.bold,
+          //       color: Colors.white,
+          //     ),
+          //   ),
+          // ),
+
+          GestureDetector(
+            onTap: () {
+              print('vliiol');
+
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => FeedbackScreen()));
+            },
+            child: SizedBox(
+              width: devWidth * 0.87,
+              height: 60,
+              child: Stack(
+                children: [
+                  Positioned(
+                    left: 0,
+                    top: 0,
+                    child: Container(
+                      width: devWidth * 0.87,
+                      height: 60,
+                      decoration: ShapeDecoration(
+                        gradient: const LinearGradient(
+                          begin: Alignment(0.00, -1.00),
+                          end: Alignment(0, 1),
+                          colors: [Color(0xFF742BBA), Color(0xFFB96CFF)],
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        shadows: const [
+                          BoxShadow(
+                            color: Color(0x54000000),
+                            blurRadius: 13,
+                            offset: Offset(0, 0),
+                            spreadRadius: 2,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 50,
+                    top: 10,
+                    child: Icon(
+                      Icons.bookmark_add_outlined,
+                      color: Colors.white,
+                      size: 35,
+                    ),
+                  ),
+                  Positioned(
+                    left: (devWidth * 0.87) / 4 + 20,
+                    top: 21,
+                    child: Text(
+                      'View Appoinment',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

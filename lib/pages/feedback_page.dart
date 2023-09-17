@@ -44,7 +44,10 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                   gradient: LinearGradient(
                     begin: Alignment(0.00, -1.00),
                     end: Alignment(0.00, 1.00),
-                    colors: [Color(0xFF742BBA), Color(0xFFB96CFF)],
+                    colors: [
+                      Color(0xFF742BBA),
+                      Color.fromARGB(255, 193, 127, 255)
+                    ],
                   ),
                 ),
               ),
