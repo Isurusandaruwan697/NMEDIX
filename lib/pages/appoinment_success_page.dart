@@ -7,23 +7,18 @@ class AppoinmentSuccess extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-                        const SizedBox(height: 200),
-
+            const SizedBox(height: 200),
             Container(
               child: const Icon(
-                
                 Icons.check_circle_rounded,
                 size: 180,
                 color: Colors.purple,
-                
-                
               ),
-            
             ),
             const SizedBox(height: 30),
             const Text(
@@ -47,14 +42,9 @@ class AppoinmentSuccess extends StatelessWidget {
             const SizedBox(height: 80),
             GestureDetector(
               onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Dashboard()),
-                  );
-                },
-              
+                Navigator.pop(context);
+              },
               child: Container(
-                
                 width: 160,
                 height: 48,
                 child: Stack(

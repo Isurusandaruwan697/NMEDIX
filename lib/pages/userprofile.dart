@@ -309,6 +309,10 @@ class _userprofileState extends State<userprofile> {
                       ),
                     ),
                     const Positioned(
+                        left: 14,
+                        top: 13,
+                        child: Icon(Icons.logout, color: Colors.white)),
+                    const Positioned(
                       left: 50,
                       top: 14,
                       child: Text(

@@ -1,18 +1,32 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:medix/auth/auth_service.dart';
 import 'package:medix/pages/article_page.dart';
+import 'package:medix/pages/ec_approval_page.dart';
 import 'package:medix/pages/feedback_page.dart';
+import 'package:medix/pages/medicalappro_screen.dart';
 import 'package:medix/widgets/homepage_card_small.dart';
 
 class Dashboard extends StatefulWidget {
-  const Dashboard({super.key});
+  // const Dashboard({super.key});
+
+  final User user;
+  Dashboard({required this.user});
 
   @override
   State<Dashboard> createState() => _DashboardState();
 }
 
 class _DashboardState extends State<Dashboard> {
+//just for test
+  // void logout() async {
+  //   await FirebaseAuth.instance.signOut();
+  // }
+
   @override
   Widget build(BuildContext context) {
+    final user = widget.user;
+
     double devHeight = MediaQuery.of(context).size.height;
     double devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -23,12 +37,10 @@ class _DashboardState extends State<Dashboard> {
             width: double.infinity,
             decoration: const ShapeDecoration(
               gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Color.fromARGB(225, 116, 43, 186),
-                    Color.fromARGB(200, 185, 108, 255)
-                  ]),
+                begin: Alignment(0.00, -1.00),
+                end: Alignment(0.00, 1.00),
+                colors: [Color(0xFF742BBA), Color.fromARGB(255, 193, 127, 255)],
+              ),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(35),
@@ -43,7 +55,9 @@ class _DashboardState extends State<Dashboard> {
                   right: 10,
                   child: IconButton(
                     color: Colors.white,
-                    onPressed: () {},
+                    onPressed: () {
+                      AuthService().signOut();
+                    },
                     icon: const Icon(Icons.menu),
                   ),
                 ),
@@ -59,26 +73,50 @@ class _DashboardState extends State<Dashboard> {
             ),
           ),
           const SizedBox(height: 30.0),
+
+          //Apoinment cards
+
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              HomePageCardSmall(
-                devWidth: devWidth,
-                devHeight: devHeight,
-                title: "Medical\nRequest",
-                sizeboxWidth: 18,
-                imgUrl: 'assets/mreq.png',
+              //Medical Apoinment Card
+              GestureDetector(
+                child: HomePageCardSmall(
+                  devWidth: devWidth,
+                  devHeight: devHeight,
+                  title: "Medical\nRequest",
+                  sizeboxWidth: 18,
+                  imgUrl: 'assets/mreq.png',
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MedicalApproval()),
+                  );
+                },
               ),
-              HomePageCardSmall(
-                devWidth: devWidth,
-                devHeight: devHeight,
-                title: "EC Approval\nRequest",
-                sizeboxWidth: 12,
-                imgUrl: 'assets/ecreq.png',
+
+              //EC Appoinment Card
+              GestureDetector(
+                child: HomePageCardSmall(
+                  devWidth: devWidth,
+                  devHeight: devHeight,
+                  title: "EC Approval\nRequest",
+                  sizeboxWidth: 12,
+                  imgUrl: 'assets/ecreq.png',
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => EcApproval()),
+                  );
+                },
               )
             ],
           ),
           const SizedBox(height: 20.0),
+
+          // Article Card
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -86,10 +124,10 @@ class _DashboardState extends State<Dashboard> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Article()),
+                    MaterialPageRoute(builder: (context) => const Article()),
                   );
                 },
-                child: Container(
+                child: SizedBox(
                   width: devWidth * 0.87,
                   height: (devHeight * 0.4) / 2,
                   child: Card(
@@ -103,16 +141,6 @@ class _DashboardState extends State<Dashboard> {
                           top: 0,
                           left: 0,
                           child: Container(
-                            child: const Padding(
-                              padding: EdgeInsets.fromLTRB(10, 3, 0, 0),
-                              child: Text(
-                                "Article",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
                             width: 200,
                             height: 30,
                             decoration: const ShapeDecoration(
@@ -132,6 +160,16 @@ class _DashboardState extends State<Dashboard> {
                                 )
                               ],
                             ),
+                            child: const Padding(
+                              padding: EdgeInsets.fromLTRB(10, 3, 0, 0),
+                              child: Text(
+                                "Article",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
                           ),
                         ),
                       ],
@@ -142,6 +180,9 @@ class _DashboardState extends State<Dashboard> {
             ],
           ),
           const SizedBox(height: 20.0),
+
+          //feedback Card
+
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -149,13 +190,14 @@ class _DashboardState extends State<Dashboard> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => FeedbackScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => const FeedbackScreen()),
                   );
                 },
                 child: Container(
                   width: devWidth * 0.87,
                   height: (devHeight * 0.4) / 2,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage('assets/feedback.png'))),
 
@@ -204,25 +246,92 @@ class _DashboardState extends State<Dashboard> {
             ],
           ),
           const SizedBox(height: 20.0),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              elevation: 6,
-              minimumSize: const Size(330, 60),
-              backgroundColor: const Color(0xFFB96CFF),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15.0),
-              ),
-            ),
-            onPressed: () {},
-            child: const Text(
-              "View Appoinment",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
+          // ElevatedButton(
+          //   style: ElevatedButton.styleFrom(
+          //     elevation: 6,
+          //     minimumSize: const Size(330, 60),
+          //     backgroundColor: const Color(0xFFB96CFF),
+          //     shape: RoundedRectangleBorder(
+          //       borderRadius: BorderRadius.circular(15.0),
+          //     ),
+          //   ),
+          //   onPressed: () {},
+          //   child: const Text(
+          //     "View Appoinment",
+          //     style: TextStyle(
+          //       fontSize: 20,
+          //       fontWeight: FontWeight.bold,
+          //       color: Colors.white,
+          //     ),
+          //   ),
+          // ),
+
+          GestureDetector(
+            onTap: () {
+              print('vliiol');
+
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => FeedbackScreen()));
+            },
+            child: SizedBox(
+              width: devWidth * 0.87,
+              height: 60,
+              child: Stack(
+                children: [
+                  Positioned(
+                    left: 0,
+                    top: 0,
+                    child: Container(
+                      width: devWidth * 0.87,
+                      height: 60,
+                      decoration: ShapeDecoration(
+                        gradient: const LinearGradient(
+                          begin: Alignment(0.00, -1.00),
+                          end: Alignment(0, 1),
+                          colors: [Color(0xFF742BBA), Color(0xFFB96CFF)],
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        shadows: const [
+                          BoxShadow(
+                            color: Color(0x54000000),
+                            blurRadius: 13,
+                            offset: Offset(0, 0),
+                            spreadRadius: 2,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 50,
+                    top: 10,
+                    child: Icon(
+                      Icons.bookmark_add_outlined,
+                      color: Colors.white,
+                      size: 35,
+                    ),
+                  ),
+                  Positioned(
+                    left: (devWidth * 0.87) / 4 + 20,
+                    top: 21,
+                    child: Text(
+                      'View Appoinment',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
+
+          Text('Hello, ${user.email}!'),
         ],
       ),
     );

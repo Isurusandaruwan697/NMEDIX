@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:medix/pages/dashboard_page.dart';
 
@@ -13,6 +14,9 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
   TextEditingController batchController = TextEditingController();
   TextEditingController indexController = TextEditingController();
   TextEditingController feedbackController = TextEditingController();
+
+  CollectionReference feedback =
+      FirebaseFirestore.instance.collection('feedback');
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +44,10 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                   gradient: LinearGradient(
                     begin: Alignment(0.00, -1.00),
                     end: Alignment(0.00, 1.00),
-                    colors: [Color(0xFF742BBA), Color(0xFFB96CFF)],
+                    colors: [
+                      Color(0xFF742BBA),
+                      Color.fromARGB(255, 193, 127, 255)
+                    ],
                   ),
                 ),
               ),
@@ -65,10 +72,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
               top: 20,
               child: IconButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Dashboard()),
-                  );
+                  Navigator.pop(context);
                 },
                 icon: Icon(
                   Icons.arrow_back_ios,
@@ -101,8 +105,6 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                 ),
                 child: Stack(
                   children: [
-                  
-                  
                     // name textfield
                     Positioned(
                       left: 20,
@@ -146,6 +148,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                                   ],
                                 ),
                                 child: TextField(
+                                  controller: nameController,
                                   decoration: InputDecoration(
                                     hintText: '     Enter Your Name',
                                     hintStyle: TextStyle(
@@ -206,6 +209,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                                   ],
                                 ),
                                 child: TextField(
+                                  controller: batchController,
                                   decoration: InputDecoration(
                                     hintText: '     Enter Your Batch',
                                     hintStyle: TextStyle(
@@ -266,6 +270,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                                   ],
                                 ),
                                 child: TextField(
+                                  controller: indexController,
                                   decoration: InputDecoration(
                                     hintText: '     Enter Your Index',
                                     hintStyle: TextStyle(
@@ -326,6 +331,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                                   ],
                                 ),
                                 child: TextField(
+                                  controller: feedbackController,
                                   decoration: InputDecoration(
                                     hintText: '     Tell Us Your Feedback',
                                     hintStyle: TextStyle(
@@ -354,10 +360,21 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
               top: 715,
               child: GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Dashboard()),
-                  );
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(builder: (context) => FeedbackScreen()),
+                  // );
+
+                  feedback
+                      .add({
+                        'name': nameController.text,
+                        'batch': batchController.text,
+                        'index': indexController.text,
+                        'feedback': feedbackController.text
+                      })
+                      .then((value) => print("Feedback added"))
+                      .catchError(
+                          (error) => print("Failed to add Feedback: $error"));
                 },
                 child: Container(
                   width: 160,

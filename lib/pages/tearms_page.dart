@@ -1,8 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:medix/pages/dashboard_page.dart';
+import 'package:medix/pages/login_page.dart';
 
 class TearmsPage extends StatefulWidget {
-  const TearmsPage({super.key});
-
   @override
   State<TearmsPage> createState() => _TearmsPageState();
 }
@@ -179,11 +180,10 @@ class _TearmsPageState extends State<TearmsPage> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const TearmsPage()),
+                      MaterialPageRoute(builder: (context) => LoginPage()),
                     );
                   },
-                  child: Container(
+                  child: SizedBox(
                     width: 160,
                     height: 48,
                     child: Stack(
@@ -267,7 +267,7 @@ class _TearmsPageState extends State<TearmsPage> {
                       MaterialPageRoute(builder: (context) => TearmsPage()),
                     );
                   },
-                  child: Container(
+                  child: SizedBox(
                     width: 160,
                     height: 48,
                     child: Stack(

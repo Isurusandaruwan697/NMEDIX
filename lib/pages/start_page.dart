@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:medix/pages/login_page.dart';
+import 'package:medix/pages/welcome_page.dart';
 
 class start extends StatelessWidget {
   const start({super.key});
@@ -95,12 +97,10 @@ class start extends StatelessWidget {
                     onTap: () {
                       print('vliiol');
 
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const start()));
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => LoginPage()));
                     },
-                    child: Container(
+                    child: SizedBox(
                       width: 160,
                       height: 48,
                       child: Stack(
