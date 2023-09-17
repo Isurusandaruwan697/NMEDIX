@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:medix/auth/auth_service.dart';
 import 'package:medix/pages/article_page.dart';
+import 'package:medix/pages/drawer_page.dart';
 import 'package:medix/pages/ec_approval_page.dart';
 import 'package:medix/pages/feedback_page.dart';
 import 'package:medix/pages/medicalappro_screen.dart';
@@ -30,6 +31,7 @@ class _DashboardState extends State<Dashboard> {
     double devHeight = MediaQuery.of(context).size.height;
     double devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      endDrawer: Drower(),
       body: Column(
         children: [
           Container(
@@ -51,16 +53,23 @@ class _DashboardState extends State<Dashboard> {
             child: Stack(
               children: [
                 Positioned(
-                  top: 30,
-                  right: 10,
-                  child: IconButton(
-                    color: Colors.white,
-                    onPressed: () {
-                      AuthService().signOut();
-                    },
-                    icon: const Icon(Icons.menu),
+                  child: AppBar(
+                    backgroundColor: Colors.transparent,
+                    elevation: 0,
                   ),
                 ),
+
+                // Positioned(
+                //   top: 30,
+                //   right: 10,
+                //   child: IconButton(
+                //     color: Colors.white,
+                //     onPressed: () {
+                //       AuthService().signOut();
+                //     },
+                //     icon: const Icon(Icons.menu),
+                //   ),
+                // ),
                 Positioned(
                   top: 90,
                   left: 20,
