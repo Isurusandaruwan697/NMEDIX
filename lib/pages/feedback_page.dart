@@ -1,9 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:medix/pages/dashboard_page.dart';
+import 'package:medix/pages/drawer_page.dart';
 
 class FeedbackScreen extends StatefulWidget {
-  const FeedbackScreen({super.key});
+  // const FeedbackScreen({super.key});
+
+  final User user;
+  FeedbackScreen({required this.user});
 
   @override
   State<FeedbackScreen> createState() => _FeedbackScreenState();
@@ -20,9 +25,12 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final user = widget.user;
+
     final devHeight = MediaQuery.of(context).size.height;
     final devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      endDrawer: Drower(user: user),
       body: Container(
         width: devWidth,
         height: devHeight,
@@ -36,7 +44,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
               child: Container(
                 width: devWidth,
                 height: devHeight * 0.3,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(30),
                     bottomRight: Radius.circular(30),
@@ -52,8 +60,19 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                 ),
               ),
             ),
-
             Positioned(
+              child: AppBar(
+                backgroundColor: Colors.transparent,
+                leading: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(Icons.arrow_back_ios),
+                ),
+                elevation: 0,
+              ),
+            ),
+            const Positioned(
               left: 40,
               top: 80,
               child: Text(
@@ -63,21 +82,6 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                   fontSize: 38,
                   fontFamily: 'Montserrat',
                   fontWeight: FontWeight.w800,
-                ),
-              ),
-            ),
-
-            Positioned(
-              left: 10,
-              top: 20,
-              child: IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: Icon(
-                  Icons.arrow_back_ios,
-                  color: Colors.white,
-                  size: 30,
                 ),
               ),
             ),
@@ -95,7 +99,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                     borderRadius: BorderRadius.circular(27),
                   ),
                   shadows: [
-                    BoxShadow(
+                    const BoxShadow(
                       color: Color(0x3F000000),
                       blurRadius: 4,
                       offset: Offset(0, 2),
@@ -106,7 +110,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                 child: Stack(
                   children: [
                     // name textfield
-                    Positioned(
+                    const Positioned(
                       left: 20,
                       top: 30,
                       child: Text(
@@ -139,7 +143,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                                     borderRadius: BorderRadius.circular(15),
                                   ),
                                   shadows: [
-                                    BoxShadow(
+                                    const BoxShadow(
                                       color: Color(0x3F000000),
                                       blurRadius: 9,
                                       offset: Offset(1, 4),
@@ -149,7 +153,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                                 ),
                                 child: TextField(
                                   controller: nameController,
-                                  decoration: InputDecoration(
+                                  decoration: const InputDecoration(
                                     hintText: '     Enter Your Name',
                                     hintStyle: TextStyle(
                                       color: Color(0xFFC4C4C4),
@@ -167,7 +171,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                       ),
                     ),
                     // batch textfield
-                    Positioned(
+                    const Positioned(
                       left: 20,
                       top: 122,
                       child: Text(
@@ -200,7 +204,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                                     borderRadius: BorderRadius.circular(15),
                                   ),
                                   shadows: [
-                                    BoxShadow(
+                                    const BoxShadow(
                                       color: Color(0x3F000000),
                                       blurRadius: 9,
                                       offset: Offset(1, 4),
@@ -210,7 +214,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                                 ),
                                 child: TextField(
                                   controller: batchController,
-                                  decoration: InputDecoration(
+                                  decoration: const InputDecoration(
                                     hintText: '     Enter Your Batch',
                                     hintStyle: TextStyle(
                                       color: Color(0xFFC4C4C4),
@@ -228,7 +232,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                       ),
                     ),
                     // index number textfield
-                    Positioned(
+                    const Positioned(
                       left: 20,
                       top: 215,
                       child: Text(
@@ -261,7 +265,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                                     borderRadius: BorderRadius.circular(15),
                                   ),
                                   shadows: [
-                                    BoxShadow(
+                                    const BoxShadow(
                                       color: Color(0x3F000000),
                                       blurRadius: 9,
                                       offset: Offset(1, 4),
@@ -271,7 +275,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                                 ),
                                 child: TextField(
                                   controller: indexController,
-                                  decoration: InputDecoration(
+                                  decoration: const InputDecoration(
                                     hintText: '     Enter Your Index',
                                     hintStyle: TextStyle(
                                       color: Color(0xFFC4C4C4),
@@ -289,7 +293,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                       ),
                     ),
                     // feedback textfield
-                    Positioned(
+                    const Positioned(
                       left: 20,
                       top: 309,
                       child: Text(
@@ -322,7 +326,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                                     borderRadius: BorderRadius.circular(15),
                                   ),
                                   shadows: [
-                                    BoxShadow(
+                                    const BoxShadow(
                                       color: Color(0x3F000000),
                                       blurRadius: 9,
                                       offset: Offset(1, 4),
@@ -332,7 +336,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                                 ),
                                 child: TextField(
                                   controller: feedbackController,
-                                  decoration: InputDecoration(
+                                  decoration: const InputDecoration(
                                     hintText: '     Tell Us Your Feedback',
                                     hintStyle: TextStyle(
                                       color: Color(0xFFC4C4C4),
@@ -388,7 +392,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                           width: 160,
                           height: 48,
                           decoration: ShapeDecoration(
-                            gradient: LinearGradient(
+                            gradient: const LinearGradient(
                               begin: Alignment(0.00, -1.00),
                               end: Alignment(0, 1),
                               colors: [Color(0xFF742BBA), Color(0xFFB96CFF)],
@@ -397,7 +401,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                               borderRadius: BorderRadius.circular(20),
                             ),
                             shadows: [
-                              BoxShadow(
+                              const BoxShadow(
                                 color: Color(0x54000000),
                                 blurRadius: 13,
                                 offset: Offset(0, 0),
@@ -407,7 +411,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                           ),
                         ),
                       ),
-                      Positioned(
+                      const Positioned(
                         left: 50,
                         top: 14,
                         child: Text(

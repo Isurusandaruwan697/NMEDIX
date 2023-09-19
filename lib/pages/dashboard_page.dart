@@ -6,6 +6,7 @@ import 'package:medix/pages/drawer_page.dart';
 import 'package:medix/pages/ec_approval_page.dart';
 import 'package:medix/pages/feedback_page.dart';
 import 'package:medix/pages/medicalappro_screen.dart';
+import 'package:medix/pages/my_appointments_page.dart';
 import 'package:medix/widgets/homepage_card_small.dart';
 
 class Dashboard extends StatefulWidget {
@@ -31,7 +32,7 @@ class _DashboardState extends State<Dashboard> {
     double devHeight = MediaQuery.of(context).size.height;
     double devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      endDrawer: Drower(),
+      endDrawer: Drower(user: user),
       body: Column(
         children: [
           Container(
@@ -55,6 +56,7 @@ class _DashboardState extends State<Dashboard> {
                 Positioned(
                   child: AppBar(
                     backgroundColor: Colors.transparent,
+                    automaticallyImplyLeading: false,
                     elevation: 0,
                   ),
                 ),
@@ -100,7 +102,8 @@ class _DashboardState extends State<Dashboard> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => MedicalApproval()),
+                    MaterialPageRoute(
+                        builder: (context) => MedicalApproval(user: user)),
                   );
                 },
               ),
@@ -117,7 +120,8 @@ class _DashboardState extends State<Dashboard> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => EcApproval()),
+                    MaterialPageRoute(
+                        builder: (context) => EcApproval(user: user)),
                   );
                 },
               )
@@ -200,7 +204,7 @@ class _DashboardState extends State<Dashboard> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const FeedbackScreen()),
+                        builder: (context) => FeedbackScreen(user: user)),
                   );
                 },
                 child: Container(
@@ -280,7 +284,7 @@ class _DashboardState extends State<Dashboard> {
               print('vliiol');
 
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => FeedbackScreen()));
+                  MaterialPageRoute(builder: (context) => MyAppoint()));
             },
             child: SizedBox(
               width: devWidth * 0.87,
