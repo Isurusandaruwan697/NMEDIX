@@ -1,7 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:medix/authentication/auth_page.dart';
 
 class userprofile extends StatefulWidget {
-  const userprofile({super.key});
+  // userprofile({super.key});
+
+  final User user;
+  userprofile({required this.user});
 
   @override
   State<userprofile> createState() => _userprofileState();
@@ -13,10 +18,11 @@ class _userprofileState extends State<userprofile> {
   int birthyear = 08;
   String email = '100';
   String bloodgroup = '5';
-  int batch = 10;
+  double batch = 10.1;
 
   @override
   Widget build(BuildContext context) {
+    final user = widget.user;
     final devHeight = MediaQuery.of(context).size.height;
     final devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -128,13 +134,17 @@ class _userprofileState extends State<userprofile> {
             ),
           ),
 
-          Text(
-            name,
-            style: const TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Montserrat',
-              fontSize: 20,
+          Positioned(
+            left: 100,
+            top: 340,
+            child: Text(
+              name,
+              style: const TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.normal,
+                fontFamily: 'Montserrat',
+                fontSize: 20,
+              ),
             ),
           ),
 
@@ -152,13 +162,17 @@ class _userprofileState extends State<userprofile> {
             ),
           ),
 
-          Text(
-            index.toStringAsFixed(0),
-            style: const TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Montserrat',
-              fontSize: 20,
+          Positioned(
+            left: 100,
+            top: 405,
+            child: Text(
+              index.toStringAsFixed(0),
+              style: const TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.normal,
+                fontFamily: 'Montserrat',
+                fontSize: 20,
+              ),
             ),
           ),
 
@@ -176,13 +190,17 @@ class _userprofileState extends State<userprofile> {
             ),
           ),
 
-          Text(
-            birthyear.toStringAsFixed(0),
-            style: const TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Montserrat',
-              fontSize: 20,
+          Positioned(
+            left: 180,
+            top: 470,
+            child: Text(
+              birthyear.toStringAsFixed(0),
+              style: const TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.normal,
+                fontFamily: 'Montserrat',
+                fontSize: 20,
+              ),
             ),
           ),
 
@@ -200,13 +218,17 @@ class _userprofileState extends State<userprofile> {
             ),
           ),
 
-          Text(
-            email,
-            style: const TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Montserrat',
-              fontSize: 20,
+          Positioned(
+            left: 100,
+            top: 535,
+            child: Text(
+              email,
+              style: const TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.normal,
+                fontFamily: 'Montserrat',
+                fontSize: 20,
+              ),
             ),
           ),
 
@@ -224,13 +246,17 @@ class _userprofileState extends State<userprofile> {
             ),
           ),
 
-          Text(
-            bloodgroup,
-            style: const TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Montserrat',
-              fontSize: 20,
+          Positioned(
+            left: 180,
+            top: 600,
+            child: Text(
+              bloodgroup,
+              style: const TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Montserrat',
+                fontSize: 20,
+              ),
             ),
           ),
 
@@ -248,13 +274,17 @@ class _userprofileState extends State<userprofile> {
             ),
           ),
 
-          Text(
-            batch.toStringAsFixed(0),
-            style: const TextStyle(
-              color: Color.fromARGB(0, 67, 67, 63),
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Montserrat',
-              fontSize: 20,
+          Positioned(
+            left: 100,
+            top: 665,
+            child: Text(
+              batch.toStringAsFixed(2),
+              style: const TextStyle(
+                color: Color.fromARGB(0, 67, 67, 63),
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Montserrat',
+                fontSize: 20,
+              ),
             ),
           ),
 

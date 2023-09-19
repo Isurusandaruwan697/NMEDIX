@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class DatePickerCard extends StatelessWidget {
   const DatePickerCard({
     super.key,
-    required this.datetext,
+    required this.currentdate,
+    // required this.datetext,
   });
 
-  final String datetext;
+  // final String datetext;
+  final int currentdate;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class DatePickerCard extends StatelessWidget {
           ),
           onPressed: () {},
           child: Text(
-            datetext,
+            currentdate.toString(),
             textAlign: TextAlign.center,
             style: TextStyle(color: Colors.black),
           )),

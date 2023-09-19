@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medix/pages/login_page.dart';
 import 'package:medix/pages/welcome_page.dart';
 
 class start extends StatelessWidget {
@@ -96,10 +97,8 @@ class start extends StatelessWidget {
                     onTap: () {
                       print('vliiol');
 
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const WelcPage()));
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => LoginPage()));
                     },
                     child: SizedBox(
                       width: 160,
