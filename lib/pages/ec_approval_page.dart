@@ -1,10 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:medix/pages/dashboard_page.dart';
+import 'package:medix/pages/drawer_page.dart';
 import 'package:medix/widgets/date_picker_card.dart';
 
 class EcApproval extends StatefulWidget {
-  const EcApproval({super.key});
+  // const EcApproval({super.key});
+  final User user;
+  EcApproval({required this.user});
 
   @override
   State<EcApproval> createState() => _EcApprovalState();
@@ -25,9 +29,11 @@ class _EcApprovalState extends State<EcApproval> {
 
   @override
   Widget build(BuildContext context) {
+    final User user = widget.user;
     final devHeight = MediaQuery.of(context).size.height;
     final devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      endDrawer: Drower(user: user),
       body: SingleChildScrollView(
         child: Container(
           width: devWidth,
@@ -72,21 +78,33 @@ class _EcApprovalState extends State<EcApproval> {
                   ),
                 ),
               ),
-
               Positioned(
-                left: 10,
-                top: 20,
-                child: IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: Icon(
-                    Icons.arrow_back_ios,
-                    color: Colors.white,
-                    size: 30,
+                child: AppBar(
+                  backgroundColor: Colors.transparent,
+                  leading: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(Icons.arrow_back_ios),
                   ),
+                  elevation: 0,
                 ),
               ),
+
+              // Positioned(
+              //   left: 10,
+              //   top: 20,
+              //   child: IconButton(
+              //     onPressed: () {
+              //       Navigator.pop(context);
+              //     },
+              //     icon: Icon(
+              //       Icons.arrow_back_ios,
+              //       color: Colors.white,
+              //       size: 30,
+              //     ),
+              //   ),
+              // ),
 
               //white big container
               Positioned(
@@ -213,6 +231,7 @@ class _EcApprovalState extends State<EcApproval> {
                                     ],
                                   ),
                                   child: TextField(
+                                    controller: ECBatchController,
                                     decoration: InputDecoration(
                                       hintText: '     Enter Your Batch',
                                       hintStyle: TextStyle(
@@ -535,11 +554,12 @@ class _EcApprovalState extends State<EcApproval> {
                     // );
                     ecApproval
                         .add({
-                          'name': ECNameController.text,
-                          'batch': ECBatchController.text,
-                          'index': ECIdController.text,
-                          'subject': ECSubjectController.text,
-                          'faculty': ECFacultyController.text,
+                          'Name': ECNameController.text,
+                          'Batch': ECBatchController.text,
+                          'Index': ECIdController.text,
+                          'Subject': ECSubjectController.text,
+                          'Faculty': ECFacultyController.text,
+                          'Date': selectedDate.toString(),
                         })
                         .then((value) => print("EC added"))
                         .catchError(

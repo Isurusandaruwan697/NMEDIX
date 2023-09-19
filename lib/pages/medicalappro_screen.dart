@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:medix/authentication/auth_page.dart';
+import 'package:medix/pages/drawer_page.dart';
 import 'package:medix/widgets/date_picker_card.dart';
 import 'package:medix/widgets/time_picker_card.dart';
 import 'dashboard_page.dart';
@@ -9,6 +11,8 @@ import 'dashboard_page.dart';
 
 class MedicalApproval extends StatefulWidget {
   // const MedicalApproval({super.key});
+  final User user;
+  MedicalApproval({required this.user});
 
   @override
   State<MedicalApproval> createState() => _MedicalApprovalState();
@@ -47,9 +51,11 @@ class _MedicalApprovalState extends State<MedicalApproval> {
 
   @override
   Widget build(BuildContext context) {
+    final user = widget.user;
     final devHeight = MediaQuery.of(context).size.height;
     final devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      endDrawer: Drower(user: user),
       body: SingleChildScrollView(
         child: Container(
           width: devWidth,
@@ -81,6 +87,20 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                 ),
               ),
 
+              //back button
+              Positioned(
+                child: AppBar(
+                  backgroundColor: Colors.transparent,
+                  leading: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(Icons.arrow_back_ios),
+                  ),
+                  elevation: 0,
+                ),
+              ),
+
               Positioned(
                 left: 40,
                 top: 70,
@@ -91,21 +111,6 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                     fontSize: 38,
                     fontFamily: 'Montserrat',
                     fontWeight: FontWeight.w800,
-                  ),
-                ),
-              ),
-
-              Positioned(
-                left: 10,
-                top: 20,
-                child: IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: Icon(
-                    Icons.arrow_back_ios,
-                    color: Colors.white,
-                    size: 30,
                   ),
                 ),
               ),
@@ -551,10 +556,12 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                     // );
                     mediAppoinment
                         .add({
-                          'MediName': MediNameController.text,
-                          'MediIndex': MediIndexController.text,
-                          'MediPerception': MediPerceptionController.text,
-                          'MediStatus': MediStatusController.text,
+                          'Name': MediNameController.text,
+                          'Index': MediIndexController.text,
+                          'Perception No': MediPerceptionController.text,
+                          'Status': MediStatusController.text,
+                          'Date': selectedDate.toString(),
+                          'Time': selectedTime.toString(),
                         })
                         .then((value) => print("MediAppoinment added"))
                         .catchError((error) =>
