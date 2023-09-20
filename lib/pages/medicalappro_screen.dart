@@ -343,7 +343,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                       ),
                       Positioned(
                         left: 20,
-                        top: 260,
+                        top: 280,
                         child: Text(
                           'Date',
                           style: TextStyle(
@@ -513,7 +513,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                       ),
                       Positioned(
                         left: 20,
-                        top: 405,
+                        top: 410,
                         child: Text(
                           'Status',
                           style: TextStyle(
@@ -526,7 +526,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                       ),
                       Positioned(
                         left: 20,
-                        top: 430,
+                        top: 440,
                         child: Container(
                           width: 306,
                           height: 44,
