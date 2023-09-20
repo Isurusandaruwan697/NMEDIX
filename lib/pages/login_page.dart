@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:medix/auth/auth_service.dart';
 import 'package:medix/pages/dashboard_page.dart';
 import 'package:medix/pages/tearms_page.dart';
-import 'package:medix/screens/tsetscreen.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({
@@ -287,7 +286,7 @@ class _LoginPageState extends State<LoginPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Dashboard(user: user),
+                          builder: (context) => TearmsPage(user: user),
                         ),
                       );
                     }

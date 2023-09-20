@@ -26,6 +26,23 @@ class _EcApprovalState extends State<EcApproval> {
 
   final List<int> dates = List.generate(31, (index) => index + 1);
   int selectedDate = 1;
+  String selectedMonth = 'January'; // Initially set to January
+
+  // List of months
+  final List<String> months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -443,17 +460,32 @@ class _EcApprovalState extends State<EcApproval> {
                         ),
                       ),
                       Positioned(
-                        left: 45,
-                        top: 450,
-                        child: Text(
-                          'September 2023',
-                          style: TextStyle(
-                            color: Colors.purple,
-                            fontSize: 10,
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.w500,
-                          ),
+                        right: 45,
+                        top: 270,
+                        child: DropdownButton<String>(
+                          value: selectedMonth,
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              selectedMonth = newValue!;
+                            });
+                          },
+                          items: months
+                              .map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          }).toList(),
                         ),
+                        // Text(
+                        //   'September 2023',
+                        //   style: TextStyle(
+                        //     color: Colors.purple,
+                        //     fontSize: 10,
+                        //     fontFamily: 'Montserrat',
+                        //     fontWeight: FontWeight.w500,
+                        //   ),
+                        // ),
                       ),
                       Positioned(
                         left: 10,
@@ -560,6 +592,7 @@ class _EcApprovalState extends State<EcApproval> {
                           'Subject': ECSubjectController.text,
                           'Faculty': ECFacultyController.text,
                           'Date': selectedDate.toString(),
+                          'Month': selectedMonth.toString(),
                         })
                         .then((value) => print("EC added"))
                         .catchError(

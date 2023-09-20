@@ -1,5 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:medix/pages/login_page.dart';
 import 'package:medix/pages/welcome_page.dart';
 
 class start extends StatelessWidget {
