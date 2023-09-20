@@ -30,6 +30,8 @@ class _MedicalApprovalState extends State<MedicalApproval> {
   final List<int> dates = List.generate(31, (index) => index + 1);
   int selectedDate = 1;
   String selectedTime = '9.00';
+    String selectedMonth = 'January'; // Initially set to January
+
 
   final List<String> times = [
     '9.00',
@@ -47,6 +49,23 @@ class _MedicalApprovalState extends State<MedicalApproval> {
     '15.30',
     '16.00',
     '16.30',
+  ];
+
+  
+  // List of months
+  final List<String> months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
   ];
 
   @override
@@ -337,23 +356,38 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                           ),
                         ),
                       ),
-                      Positioned(
-                        left: 45,
-                        top: 280,
-                        child: Text(
-                          'September 2023',
-                          style: TextStyle(
-                            color: Colors.purple,
-                            fontSize: 10,
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.w500,
-                          ),
+                     Positioned(
+                        right: 45,
+                        top: 270,
+                        child: DropdownButton<String>(
+                          value: selectedMonth,
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              selectedMonth = newValue!;
+                            });
+                          },
+                          items: months
+                              .map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          }).toList(),
                         ),
+                        // Text(
+                        //   'September 2023',
+                        //   style: TextStyle(
+                        //     color: Colors.purple,
+                        //     fontSize: 10,
+                        //     fontFamily: 'Montserrat',
+                        //     fontWeight: FontWeight.w500,
+                        //   ),
+                        // ),
                       ),
                       // date picker
                       Positioned(
                         left: 10,
-                        top: 285,
+                        top: 305,
                         child: SizedBox(
                           height: 70,
                           width: devWidth / 12 * 9.5,
@@ -429,7 +463,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                       //time picker
                       Positioned(
                         left: 10,
-                        top: 350,
+                        top: 368,
                         child: SizedBox(
                           height: 40,
                           width: devWidth / 12 * 9.5,
