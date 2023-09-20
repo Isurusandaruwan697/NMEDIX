@@ -448,7 +448,7 @@ class _EcApprovalState extends State<EcApproval> {
                       ),
                       Positioned(
                         left: 20,
-                        top: 430,
+                        top: 440,
                         child: Text(
                           'Date',
                           style: TextStyle(
@@ -461,7 +461,7 @@ class _EcApprovalState extends State<EcApproval> {
                       ),
                       Positioned(
                         right: 45,
-                        top: 270,
+                        top: 420,
                         child: DropdownButton<String>(
                           value: selectedMonth,
                           onChanged: (String? newValue) {
@@ -489,7 +489,7 @@ class _EcApprovalState extends State<EcApproval> {
                       ),
                       Positioned(
                         left: 10,
-                        top: 455,
+                        top: 465,
                         child: SizedBox(
                           height: 70,
                           width: devWidth / 12 * 9.5,
