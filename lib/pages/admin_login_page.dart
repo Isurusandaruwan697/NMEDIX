@@ -113,7 +113,7 @@ class _AdminLoginState extends State<AdminLogin> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: Colors.black,
-                            fontSize: 38,
+                            fontSize: 35,
                             fontFamily: 'Montserrat',
                             fontWeight: FontWeight.w700,
                             height: 0,
@@ -121,7 +121,7 @@ class _AdminLoginState extends State<AdminLogin> {
                         ),
                       ),
                       Positioned(
-                        left: width*0.1,
+                        left: width*0.11,
                         top: height*0.6,
                         child: Container(
                           width: width*0.18,
@@ -187,7 +187,7 @@ class _AdminLoginState extends State<AdminLogin> {
                                   'Username',
                                   style: TextStyle(
                                     color: Color(0xFF333333),
-                                    fontSize: 30,
+                                    fontSize: 27,
                                     fontFamily: 'Montserrat',
                                     fontWeight: FontWeight.w500,
                                     height: 0,
@@ -201,7 +201,7 @@ class _AdminLoginState extends State<AdminLogin> {
                                   'Password',
                                   style: TextStyle(
                                     color: Color(0xFF333333),
-                                    fontSize: 30,
+                                    fontSize: 28,
                                     fontFamily: 'Montserrat',
                                     fontWeight: FontWeight.w500,
                                     height: 0,
@@ -212,7 +212,7 @@ class _AdminLoginState extends State<AdminLogin> {
                                 left: 196,
                                 top: 0,
                                 child: Container(
-                                  width: 356,
+                                  width: width*0.2,
                                   height: 59,
                                   child: Stack(
                                     children: [
@@ -220,7 +220,7 @@ class _AdminLoginState extends State<AdminLogin> {
                                         left: 0,
                                         top: 0,
                                         child: Container(
-                                          width: 356,
+                                          width: width*0.2,
                                           height: 59,
                                           decoration: ShapeDecoration(
                                             color: Colors.white,
@@ -245,7 +245,7 @@ class _AdminLoginState extends State<AdminLogin> {
                                           'Enter Your Username',
                                           style: TextStyle(
                                             color: Color(0xFFC4C4C4),
-                                            fontSize: 20,
+                                            fontSize: 18,
                                             fontFamily: 'Montserrat',
                                             fontWeight: FontWeight.w500,
                                             height: 0,
@@ -260,7 +260,7 @@ class _AdminLoginState extends State<AdminLogin> {
                                 left: 196,
                                 top: 100,
                                 child: Container(
-                                  width: 356,
+                                  width: width*0.2,
                                   height: 59,
                                   child: Stack(
                                     children: [
@@ -268,7 +268,7 @@ class _AdminLoginState extends State<AdminLogin> {
                                         left: 0,
                                         top: 0,
                                         child: Container(
-                                          width: 356,
+                                          width: width*0.2,
                                           height: 59,
                                           decoration: ShapeDecoration(
                                             color: Colors.white,
@@ -293,7 +293,7 @@ class _AdminLoginState extends State<AdminLogin> {
                                           'Enter Your Password',
                                           style: TextStyle(
                                             color: Color(0xFFC4C4C4),
-                                            fontSize: 20,
+                                            fontSize: 18,
                                             fontFamily: 'Montserrat',
                                             fontWeight: FontWeight.w500,
                                             height: 0,
@@ -312,6 +312,25 @@ class _AdminLoginState extends State<AdminLogin> {
                   ),
                 ),
               ),
+
+              Positioned(
+                left: width*0.06,
+                top: height*0.25,
+                child: Container(
+                  width: width*0.28,
+                  height: height*0.5,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/intro.png"),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+              ),
+
+
+
+
               ],
             ),
             
