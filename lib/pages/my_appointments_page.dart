@@ -75,7 +75,9 @@ class _MyAppointState extends State<MyAppoint> {
                       top: 10,
                       left: 10,
                       child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
                         icon: const Icon(
                           Icons.arrow_back_ios,
                           color: Colors.white,

@@ -98,7 +98,7 @@ class start extends StatelessWidget {
                       print('vliiol');
 
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => LoginPage()));
+                          MaterialPageRoute(builder: (context) => WelcPage()));
                     },
                     child: SizedBox(
                       width: 160,

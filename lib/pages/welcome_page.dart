@@ -27,7 +27,7 @@ class _WelcPageState extends State<WelcPage> {
                   child: Align(
                     alignment: Alignment.topCenter,
                     child: Image(
-                      image: const AssetImage('logocolor.png'),
+                      image: const AssetImage('assets/logocolor.png'),
                       fit: BoxFit.cover,
                       width: MediaQuery.of(context).size.width * 0.7,
                     ),
@@ -65,23 +65,6 @@ class _WelcPageState extends State<WelcPage> {
                   ),
                 ),
                 Positioned(
-                  left: width * 0.08,
-                  top: height * 0.3,
-                  child: const SizedBox(
-                    width: 250,
-                    height: 70,
-                    child: Text(
-                      "Let's get you started on your health journey.\nFollow these steps to unlock a world \nof seamless healthcare:",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 12,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
                   left: 0,
                   bottom: 0,
                   child: Container(
@@ -89,15 +72,15 @@ class _WelcPageState extends State<WelcPage> {
                     height: height * 0.65,
                     decoration: const BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage("doctor.png"),
+                        image: AssetImage("assets/doctor.png"),
                         fit: BoxFit.fill,
                       ),
                     ),
                   ),
                 ),
                 Positioned(
-                  left: width * 0.14,
-                  top: height * 0.45,
+                  left: width * 0.18,
+                  top: height * 0.42,
                   child: Container(
                     width: width * 0.72,
                     height: height * 0.3,
@@ -133,8 +116,8 @@ class _WelcPageState extends State<WelcPage> {
                             child: const Stack(
                               children: [
                                 Positioned(
-                                  left: 8,
-                                  top: 54,
+                                  left: 12,
+                                  top: 70,
                                   child: Text(
                                     "Step 2: Schedule  appointments with just a \nfew taps. our health, your way.",
                                     style: TextStyle(
@@ -146,7 +129,7 @@ class _WelcPageState extends State<WelcPage> {
                                   ),
                                 ),
                                 Positioned(
-                                  left: 8,
+                                  left: 12,
                                   top: 0,
                                   child: Text(
                                     "Step 1: Log  in to  your account  using  your \nusername and set a password. It's your key to \nbetter care!",
@@ -159,8 +142,8 @@ class _WelcPageState extends State<WelcPage> {
                                   ),
                                 ),
                                 Positioned(
-                                  left: 8,
-                                  top: 110,
+                                  left: 12,
+                                  top: 130,
                                   child: Text(
                                     "Step 3: Discover our innovative features for\neffortless  appointment booking and more...",
                                     style: TextStyle(
@@ -179,65 +162,66 @@ class _WelcPageState extends State<WelcPage> {
                     ),
                   ),
                 ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const LoginPage()),
-                    );
-                  },
-                  child: Positioned(
-                    left: width * 0.5,
-                    bottom: height * 0.06,
+                Positioned(
+                  right: width * 0.1,
+                  bottom: height * 0.1,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginPage()),
+                      );
+                    },
                     child: Container(
-                        width: width * 0.4,
-                        height: 48,
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              left: 0,
-                              top: 0,
-                              child: Container(
-                                width: width * 0.4,
-                                height: 48,
-                                decoration: ShapeDecoration(
-                                    gradient: const LinearGradient(
-                                      begin: Alignment(0.00, -1.00),
-                                      end: Alignment(0, 1),
-                                      colors: [
-                                        Color(0xFF742BBA),
-                                        Color(0xFFB96CFF)
-                                      ],
-                                    ),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                    shadows: const [
-                                      BoxShadow(
-                                        color: Color(0x54000000),
-                                        blurRadius: 4,
-                                        offset: Offset(0, 0),
-                                        spreadRadius: 4,
-                                      )
-                                    ]),
+                      width: width * 0.4,
+                      height: 48,
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            left: 0,
+                            top: 0,
+                            child: Container(
+                              width: width * 0.4,
+                              height: 48,
+                              decoration: ShapeDecoration(
+                                  gradient: const LinearGradient(
+                                    begin: Alignment(0.00, -1.00),
+                                    end: Alignment(0, 1),
+                                    colors: [
+                                      Color(0xFF742BBA),
+                                      Color(0xFFB96CFF)
+                                    ],
+                                  ),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  shadows: const [
+                                    BoxShadow(
+                                      color: Color(0x54000000),
+                                      blurRadius: 4,
+                                      offset: Offset(0, 0),
+                                      spreadRadius: 4,
+                                    )
+                                  ]),
+                            ),
+                          ),
+                          const Positioned(
+                            left: 42,
+                            top: 14,
+                            child: Text(
+                              'Continue',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.w400,
                               ),
                             ),
-                            const Positioned(
-                              left: 42,
-                              top: 14,
-                              child: Text(
-                                'Continue',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                            )
-                          ],
-                        )),
+                          )
+                        ],
+                      ),
+                    ),
                   ),
                 )
               ],
