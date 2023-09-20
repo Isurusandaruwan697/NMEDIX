@@ -26,10 +26,8 @@ class _EcApprovalState extends State<EcApproval> {
 
   final List<int> dates = List.generate(31, (index) => index + 1);
   int selectedDate = 1;
-    String selectedMonth = 'January'; // Initially set to January
+  String selectedMonth = 'January'; // Initially set to January
 
-
-  
   // List of months
   final List<String> months = [
     'January',
@@ -594,6 +592,7 @@ class _EcApprovalState extends State<EcApproval> {
                           'Subject': ECSubjectController.text,
                           'Faculty': ECFacultyController.text,
                           'Date': selectedDate.toString(),
+                          'Month': selectedMonth.toString(),
                         })
                         .then((value) => print("EC added"))
                         .catchError(

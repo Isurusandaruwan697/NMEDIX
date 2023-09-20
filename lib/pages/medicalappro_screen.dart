@@ -30,8 +30,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
   final List<int> dates = List.generate(31, (index) => index + 1);
   int selectedDate = 1;
   String selectedTime = '9.00';
-    String selectedMonth = 'January'; // Initially set to January
-
+  String selectedMonth = 'January'; // Initially set to January
 
   final List<String> times = [
     '9.00',
@@ -51,7 +50,6 @@ class _MedicalApprovalState extends State<MedicalApproval> {
     '16.30',
   ];
 
-  
   // List of months
   final List<String> months = [
     'January',
@@ -356,7 +354,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                           ),
                         ),
                       ),
-                     Positioned(
+                      Positioned(
                         right: 45,
                         top: 270,
                         child: DropdownButton<String>(
@@ -596,6 +594,7 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                           'Status': MediStatusController.text,
                           'Date': selectedDate.toString(),
                           'Time': selectedTime.toString(),
+                          'Month': selectedMonth.toString(),
                         })
                         .then((value) => print("MediAppoinment added"))
                         .catchError((error) =>
