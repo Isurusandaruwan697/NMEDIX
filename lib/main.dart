@@ -1,11 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:medix/firebase_options.dart';
-import 'package:medix/pages/feedback_page.dart';
-import 'package:medix/pages/my_appointments_page.dart';
 import 'package:medix/pages/splash_page.dart';
-import 'package:medix/pages/userprofile.dart';
-import 'package:medix/test.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

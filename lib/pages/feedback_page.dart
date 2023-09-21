@@ -370,7 +370,10 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                   // );
 
                   feedback
-                      .add({
+                      .doc(user.email)
+                      .collection('UserFeedbacks')
+                      .doc()
+                      .set({
                         'name': nameController.text,
                         'batch': batchController.text,
                         'index': indexController.text,
