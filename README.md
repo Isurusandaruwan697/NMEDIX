@@ -74,7 +74,9 @@ NMedix's user appointments history interface offers a comprehensive view of past
 >Appointment Booking for EC
 The EC Interface simplifies user submission of EC evaluation requests, requiring full name, batch/group information, university Index number, subject, professors, and submission date. Users can submit and send their thoughts.
 
->
+>USER PROFILE 
+Personal data viewing areas are available on the user profile interface. The sections that are included are name, index number, birthdate, email, blood type, and batch. Users can easily review their personal information using this user profile page, helping to maintain correct data.
+
 >ARTICLE DASHBOARD 
 Users can browse educational information on health, wellness, technology, and lifestyle subjects using the article dashboard from NMedix, which provides a visually appealing, well-organized, and visually appealing platform. This content includes medical research, recommendations for leading healthy lives, and treatment choices.
 
