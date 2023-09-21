@@ -22,6 +22,9 @@ The splash page UI for the NMedix platform serves as an interesting and educatio
 Utilizing the "Get Started" page interface, users can explore NMedix's platform with ease. It highlights the neatness, personalised healthcare options, and ease of use of NMedix.
 
 >TERMS AND CONDITIONS
-Our user-friendly interface for our Terms & Conditions ensures transparency and clarity, allowing users to easily understand and accept our policies, ensuring they can easily navigate and comprehend our commitments. 
+Our user-friendly interface for our Terms & Conditions ensures transparency and clarity, allowing users to easily understand and accept our policies, ensuring they can easily navigate and comprehend our commitments.
 
 
+
+
+<img src="assets/2.png" height="400" width="1200" > 
