@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:medix/authentication/auth_page.dart';
 import 'package:medix/pages/dashboard_page.dart';
 import 'package:medix/pages/drawer_page.dart';
 import 'package:medix/widgets/date_picker_card.dart';
@@ -585,7 +586,10 @@ class _EcApprovalState extends State<EcApproval> {
                     //   MaterialPageRoute(builder: (context) => EcApproval()),
                     // );
                     ecApproval
-                        .add({
+                        .doc(user.email)
+                        .collection('UserECAppointment')
+                        .doc()
+                        .set({
                           'Name': ECNameController.text,
                           'Batch': ECBatchController.text,
                           'Index': ECIdController.text,

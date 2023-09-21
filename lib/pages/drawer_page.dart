@@ -6,6 +6,7 @@ import 'package:medix/pages/ec_approval_page.dart';
 import 'package:medix/pages/medicalappro_screen.dart';
 import 'package:medix/pages/my_appointments_page.dart';
 import 'package:medix/pages/userprofile.dart';
+import 'package:medix/test.dart';
 
 class Drower extends StatelessWidget {
   // Drower({super.key});
@@ -102,12 +103,13 @@ class Drower extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 GestureDetector(
-                  /*onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Dashboard()), 
-                        );
-                      }, */
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Dashboard(user: user)),
+                    );
+                  },
                   child: SizedBox(
                     width: 160,
                     height: 48,

@@ -587,7 +587,11 @@ class _MedicalApprovalState extends State<MedicalApproval> {
                     //   MaterialPageRoute(builder: (context) => MedicalApproval()),
                     // );
                     mediAppoinment
-                        .add({
+                        .doc(user.email)
+                        .collection('UserMedicalAppoinment')
+                        .doc()
+                        .set({
+                          // .add({
                           'Name': MediNameController.text,
                           'Index': MediIndexController.text,
                           'Perception No': MediPerceptionController.text,
