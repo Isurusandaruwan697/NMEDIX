@@ -28,3 +28,42 @@ Our user-friendly interface for our Terms & Conditions ensures transparency and 
 
 
 <img src="assets/2.png" height="400" width="1200" > 
+
+
+
+
+
+
+<img src="assets/3.png" height="400" width="1200" >
+
+
+
+
+
+
+
+
+<img src="assets/4.png" height="400" width="1200" > 
+
+
+
+
+
+
+
+
+
+
+<img src="assets/5.png" height="400" width="1200" > 
+
+
+
+
+
+
+
+
+
+
+
+<img src="assets/6.png" height="400" width="1200" > 
