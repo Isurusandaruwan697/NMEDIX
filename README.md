@@ -29,12 +29,22 @@ Our user-friendly interface for our Terms & Conditions ensures transparency and 
 
 <img src="assets/2.png" height="400" width="1200" > 
 
+>INSTRUCTION
+Customers are guided through each step necessary to use the platform appropriately through our Instruction Interface.
+
+>USER LOGIN
+The user login window contains fields where a username and password can be entered. Users fill out the username box with their unique identifiers. The password field is where users can enter their private account password.
+
+>USER DASHBOARD
+The dashboard interface provides a thorough breakdown of all the sections and features.
+
 
 
 
 
 
 <img src="assets/3.png" height="400" width="1200" >
+
 
 
 
