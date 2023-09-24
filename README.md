@@ -2,9 +2,8 @@
 
 # <img src="assets/banner.png" height="150" width="1200" > 
 
-<a href="#"><img alt="views" title="Github views" src="https://komarev.com/ghpvc/?username=isurusandaruwan697&label=Profile%20views&color=0e75b6&style=flat" width="125"/></a>
+<a href="#"><img alt="views" title="Github views" src="https://youtu.be/gKOYDavz4gc?si=MqkS3ouNnRGSkMYE&style=flat" width="125"/></a>
 [![Welcome](https://img.shields.io/badge/NSBM%20Green%20University-Welcome-brightgreen)](#) 
-[![Welcome](https://img.shields.io/badge/Mobile%20Applications-Final%20Project-orange)](#)
 
 
 ## Introduction
