@@ -4,7 +4,7 @@
 
 <a href="#"><img alt="views" title="Github views" src="https://komarev.com/ghpvc/?username=isurusandaruwan697&label=Profile%20views&color=0e75b6&style=flat" width="125"/></a>
 [![Welcome](https://img.shields.io/badge/NSBM%20Green%20University-Welcome-brightgreen)](#) 
-[![Welcome](https://img.shields.io/badge/Enterprise%20System-Final%20Project-orange)](#)
+[![Welcome](https://img.shields.io/badge/Mobile%20Application-Final%20Project-orange)](#)
 
 ## Introduction
 NSBM Green University prioritizes health care for staff and students, offering personalized medical advice and treatments to address individual medical needs in a fast-paced society, addressing the challenges posed by environmental pollution and hectic schedules.
