@@ -2,7 +2,7 @@
 
 # <img src="assets/banner.png" height="150" width="1200" > 
 
-<a href="#"><img alt="views" title="Github views" src="https://youtu.be/gKOYDavz4gc?si=MqkS3ouNnRGSkMYE&style=flat" width="125"/></a>
+<a href="#"><img alt="views" title="Github views" src="https://komarev.com/ghpvc/?username=isurusandaruwan697&label=Profile%20views&color=0e75b6&style=flat" width="125"/></a>
 [![Welcome](https://img.shields.io/badge/NSBM%20Green%20University-Welcome-brightgreen)](#) 
 
 
@@ -11,10 +11,7 @@ NSBM Green University prioritizes health care for staff and students, offering p
 In light of all the issues, user demands, and expectations, we advise the medical facility to adopt the mobile application NMEDIX. This mobile application makes it easier for medical facilities to complete their jobs quickly and effectively.
 
 
-[![Watch the video](https://img.youtube.com/vi/APOPm01BVrk/hqdefault.jpg)](https://www.youtube.com/embed/APOPm01BVrk)
-
-[<img src="https://img.youtube.com/vi/APOPm01BVrk/hqdefault.jpg" width="600" height="300"
-/>](https://www.youtube.com/embed/APOPm01BVrk)
+[![Watch the video](https://img.youtube.com/vi/APOPm01BVrk/hqdefault.jpg)](https://youtu.be/gKOYDavz4gc?si=MqkS3ouNnRGSkMYE)
 
 
 
