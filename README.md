@@ -11,9 +11,9 @@ NSBM Green University prioritizes health care for staff and students, offering p
 In light of all the issues, user demands, and expectations, we advise the medical facility to adopt the mobile application NMEDIX. This mobile application makes it easier for medical facilities to complete their jobs quickly and effectively.
 
 
-[![Watch the video](https://img.youtube.com/vi/APOPm01BVrk/hqdefault.jpg)](https://www.youtube.com/embed/gKOYDavz4gc&featur)
+ Check out this video:
 
-
+<iframe src="https://embed.ly/code?url=https://www.youtube.com/watch?v=gKOYDavz4gc"></iframe>
 
 
 ## UI and Introduction
